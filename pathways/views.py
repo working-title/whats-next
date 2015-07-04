@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Career, Interest, Qualification
 
-# Create your views here.
+def index(request):
+    output = Career.objects.all()
+    return HttpResponse(output)
