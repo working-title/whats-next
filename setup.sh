@@ -18,15 +18,29 @@ sudo pip install virtualenvwrapper
 
 echo 'Configuring Python Virtual Environment'
 
-echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.bashrc
-echo 'source /usr/local/bin/virtualenvwrapper.sh' >> ~/.bashrc
-
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv working-title
 
-echo 'cd /srv/project' >> ~/.bashrc
-echo 'workon working-title' >> ~/.bashrc
+if [ ! -f ~/.edittedbashrc ]
+then
+	echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.bashrc
+	echo 'source /usr/local/bin/virtualenvwrapper.sh' >> ~/.bashrc
+
+	echo 'cd /srv/project' >> ~/.bashrc
+	echo 'workon working-title' >> ~/.bashrc
+
+
+	# alias
+	echo 'export PROJECT=/srv/project' >> ~/.bashrc
+	echo 'alias m="python $PROJECT/manage.py"' >> ~/.bashrc
+	echo 'alias dmigrate="m migrate"' >> ~/.bashrc
+	echo 'alias update="pip install -r $PROJECT/requirements.txt"' >> ~/.bashrc
+	echo 'alias drun="m runserver 0.0.0.0:8000"' >> ~/.bashrc
+	echo 'alias dshell="m shell_plus"' >> ~/.bashrc
+
+	touch ~/.edittedbashrc
+fi
 
 # Sync Github
 echo 'Cloning our awesome code repo!'
