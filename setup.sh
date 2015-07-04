@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 # Update
-sudo apt-get update
+echo "Updating"
+ sudo apt-get update -qq
 
 # Packages
-sudo apt-get install -y git \
-                        python-dev \
-                        python-pip \
+echo "Installing packages"
+sudo apt-get install -y -qq git \
+						python-dev \
+						python-pip \
 
 # Setup virtual environment
 sudo pip install virtualenvwrapper
@@ -14,8 +16,8 @@ sudo pip install virtualenvwrapper
 echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.bashrc
 echo 'source /usr/local/bin/virtualenvwrapper.sh' >> ~/.bashrc
 
-. ~/.bashrc # reload bash file
-
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv working-title
 
 echo 'cd /srv/project' >> ~/.bashrc
