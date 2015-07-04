@@ -7,19 +7,13 @@
         <title>What's Next?</title>
 
         <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'pathways/css/main.css' %}">
+
         <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
         {% block head %} {%  endblock head %}
     </head>
 
     <body>
-
-        <div class="wrapper">
-            <header>What's App</header>
-
-            <div class="content">
-            {% block content %} {%  endblock content %}
-            </div>
-        </div>
-
+        {% block content %} {%  endblock content %}
     </body>
 </html>

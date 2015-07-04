@@ -1,0 +1,135 @@
+body {
+	background-color: #fafafa;
+}
+
+/*========CLEARFIX==========*/
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/*========HEADER==========*/
+
+.ribbon {
+	height: 30px;
+	background-color: #252222;
+}
+
+h1 {
+	margin-top: -30px;
+	text-align: center;
+}
+
+.subheading {
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 30px 0;
+	font-size: 22px;
+	text-align: center;
+}
+
+.text {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+/*========SUBJECT CHOICES==========*/
+
+.subjects {
+	background-color: #252222;
+	color: #ecd328;
+	text-align: center;
+}
+
+.subjects ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.subjects ul li {
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 0.5em 1em;
+}
+
+.subjects ul li:first-child {
+	padding-left: 0;
+}
+
+.subjects ul li:last-child {
+	padding-right: 0;
+}
+
+/*========BREADCRUMB==========*/
+
+.breadcrumb {
+	max-width: 960px;
+	margin: 0 auto;
+	background-color: #fafafa; 
+	text-align: center;
+}
+
+/*========CAREER CHOICES==========*/
+
+.careers form input {
+	margin: 0.5em 1em;
+	padding: 0.5em 1em;
+
+}
+
+.careers form input:first-child {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.careers form input:last-child {
+	margin-right: 0;
+}
+
+.go-button {
+	text-align: center;
+}
+
+/*========WORK COMPARISON==========*/
+
+#work-comparison {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.option-one {
+	float: left;
+	max-width: 350px;
+}
+
+.option-two {
+	float: right;
+	max-width: 350px;
+}
+
+/*========FUTURE COMPARISON==========*/
+
+#future-comparison {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.option-one {
+	float: left;
+	max-width: 350px;
+}
+
+.option-two {
+	float: right;
+	max-width: 350px;
+}
+
+
+
