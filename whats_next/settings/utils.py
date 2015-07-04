@@ -13,7 +13,7 @@ def get_env_setting(setting, default=None, error_msg=None):
     :return: value from environment variable or default value
     """
     try:
-        return os.environ['WHATS_NEXT' + setting]
+        return os.environ['WHATS_NEXT_' + setting]
     except KeyError:
 
         # return the default if one exists
