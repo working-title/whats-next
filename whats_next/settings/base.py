@@ -1,13 +1,13 @@
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
 from .utils import *
+from whats_next.settings.utils import get_env_setting
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ##########################
 # SECRET KEY CONFIGURATION
 
-SECRET_KEY = get_env_setting('SECRET_KEY', error_msg='You need to set a secret key!')
+SECRET_KEY = 'h%^yu2b9j!cn-@ql6tuhw1t3+-1x50$sf_2j-vt!yv+8)(n=_p'
 
 # SECRET KEY CONFIGURATION
 ##########################
@@ -17,7 +17,7 @@ SECRET_KEY = get_env_setting('SECRET_KEY', error_msg='You need to set a secret k
 # DEBUG CONFIGURATION
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = str2bool(get_env_setting('DEBUG', default=False))
+DEBUG = False
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
 TEMPLATE_DEBUG = DEBUG
@@ -33,21 +33,6 @@ INTERNAL_IPS = ast.literal_eval(get_env_setting('INTERNAL_IPS', default="('127.0
 # SECURITY CONFIGURATION
 ########################
 
-
-#######################
-# MANAGER CONFIGURATION
-
-# See: # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (
-    ('Joseph Bennett', 'josephbennett42@gmail.com'),
-)
-
-# See: # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
-MANAGERS = ADMINS
-
-# MANAGER CONFIGURATION
-#######################
-
 ###################
 # APP CONFIGURATION
 
@@ -58,6 +43,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pathways',
+    'django_extensions',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -94,15 +82,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'whats_next.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -117,8 +100,19 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

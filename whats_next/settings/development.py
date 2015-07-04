@@ -3,9 +3,7 @@ from .base import *
 #####################
 # DEBUG CONFIGURATION
 
-DEBUG = str2bool(
-    get_env_setting('DEBUG', error_msg='You need to set DEBUG in your configuration file while developing.'
-                                       ' Or alternatively you could set it manually as an environment variable.'))
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -34,16 +32,6 @@ if DEBUG:
 # SECURITY CONFIGURATION
 ########################
 
-
-###################
-# APP CONFIGURATION
-
-INSTALLED_APPS += ('debug_toolbar',)
-
-# APP CONFIGURATION
-###################
-
-
 #######################
 # LOGGING CONFIGURATION
 
@@ -51,3 +39,14 @@ LOG_LEVEL = get_env_setting('LOG_LEVEL', default='DEBUG')
 
 # LOGGING CONFIGURATION
 #######################
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'whats_next',
+        'USER': 'whats_next',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
