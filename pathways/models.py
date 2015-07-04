@@ -1,7 +1,9 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Qualification(models.Model):
     name = models.CharField(max_length=256)
+    debt = models.FloatField(default=0, validators=[MinValueValidator(0)])
     
     def __unicode__(self):              # __unicode__ on Python 2
         return self.name
