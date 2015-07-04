@@ -4,7 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Qualification(models.Model):
     name = models.CharField(max_length=256)
     debt = models.FloatField(default=0, validators=[MinValueValidator(0)])
-    
+
     def __unicode__(self):              # __unicode__ on Python 2
         return self.name
 
@@ -20,10 +20,18 @@ class Career(models.Model):
     def __unicode__(self):              # __unicode__ on Python 2
         return self.name
 
+
 class Interest(models.Model):
     name = models.CharField(max_length=256)
     careers = models.ManyToManyField(Career)
     maori_name = models.CharField(max_length=256, blank=True)
+
+    def __unicode__(self):              # __unicode__ on Python 2
+        return self.name
+
+class Category(models.Model):
+    name = models.CharField(max_length=256)
+    interests = models.ManyToManyField(Interest)
 
     def __unicode__(self):              # __unicode__ on Python 2
         return self.name
