@@ -6,6 +6,9 @@
 # django
 *.sqlite3
 
+# Intellj
+.idea/
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
