@@ -31,7 +31,7 @@ DATABASES = {
         'USER': get_env_setting('DATABASE_USER'),
         'PASSWORD': get_env_setting('DATABASE_PASSWORD'),
         'HOST': get_env_setting('DATABASE_HOST', default='localhost'),
-        'PORT': get_env_setting('DATABASE_PORT', default='5432'),
+        'PORT': get_env_setting('DATABASE_PORT', default='3306'),
     }
 }
 
