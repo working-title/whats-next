@@ -8,6 +8,16 @@ sudo apt-get install -y git \
                         python-dev \
                         python-pip \
 
+# Setup virtual environment
+sudo pip install virtualenvwrapper
+
+echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.bashrc
+echo 'source /usr/local/bin/virtualenvwrapper.sh' >> ~/.bashrc
+
+mkvirtualenv working-title
+
+echo 'cd /srv/project' >> ~/.bashrc
+echo 'workon working-title' >> ~/.bashrc
 
 # Sync Github
 (cd /srv/project ;
