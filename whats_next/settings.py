@@ -78,8 +78,11 @@ WSGI_APPLICATION = 'whats_next.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'whats_next',
+        'USER': 'whats_next',
+        'HOST': 'localhost', 
+        'PORT': '3306',
     }
 }
 

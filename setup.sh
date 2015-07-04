@@ -55,11 +55,12 @@ export DEBIAN_FRONTEND=noninteractive
 
 sudo -E apt-get install -y mysql-server
 sudo -E apt-get install -y mysql-client
+sudo apt-get install -y libmysqlclient-dev
 
 if [ ! -d /var/lib/mysql/mywebsite ];
 then
     echo "CREATE USER 'whats_next'@'localhost'" | mysql -u root
-    echo "CREATE DATABASE whats_next" | mysql -u root
+    echo "CREATE DATABASE whats_next CHARACTER SET utf8;" | mysql -u root
     echo "GRANT ALL ON whats_next.* TO 'whats_next'@'%'" | mysql -u root
     echo "flush privileges" | mysql -u root
 fi
