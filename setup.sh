@@ -28,12 +28,37 @@ mkvirtualenv working-title
 echo 'cd /srv/project' >> ~/.bashrc
 echo 'workon working-title' >> ~/.bashrc
 
-
 # Sync Github
 echo 'Cloning our awesome code repo!'
 (cd /srv/project ;
  git config --global push.default simple
  pip install -r requirements.txt
 )
+
+DEV_PASSWORD='vagrant'
+
+export DEBIAN_FRONTEND=noninteractive
+
+sudo -E apt-get install -y mysql-server
+sudo -E apt-get install -y mysql-client
+
+if [ ! -d /var/lib/mysql/mywebsite ];
+then
+    echo "CREATE USER 'whats_next'@'localhost'" | mysql -u root
+    echo "CREATE DATABASE whats_next" | mysql -u root
+    echo "GRANT ALL ON whats_next.* TO 'whats_next'@'%'" | mysql -u root
+    echo "flush privileges" | mysql -u root
+fi
+
+echo "Updating mysql configs in /etc/mysql/my.cnf."
+sudo sed -i "s/bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+echo "Updated mysql bind address in /etc/mysql/my.cnf to 0.0.0.0 to allow external connections."
+
+echo "Assigning mysql user whats_next access on %."
+sudo mysql -u root --execute "GRANT ALL PRIVILEGES ON *.* TO 'whats_next'@'%'; FLUSH PRIVILEGES;" whats_next
+echo "Assigned mysql user whats_next access on all hosts."
+
+sudo service mysql stop
+sudo service mysql start
 
 echo 'Done :) - Hopefully!'

@@ -8,7 +8,11 @@ Vagrant.configure(2) do |config|
     vb.memory = "2048"
   end
 
+  # Django
   config.vm.network "forwarded_port", guest: 8000, host: 8000
+
+  # MySQL
+  config.vm.network "forwarded_port", guest: 3306, host: 3306
 
   config.vm.synced_folder ".", "/srv/project"
 
