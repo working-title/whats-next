@@ -1,6 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from .models import Career
+from pathways.models import Career
 
 def index(request):
     output = Career.objects.all()
