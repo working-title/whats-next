@@ -21,3 +21,6 @@ class Interests(models.Model):
     name = models.CharField(max_length=256)
     careers = models.ManyToManyField(Career)
     maori_name = models.CharField(max_length=256)
+
+    def __unicode__(self):              # __unicode__ on Python 2
+        return self.name
