@@ -2,7 +2,9 @@
 from .utils import *
 from whats_next.settings.utils import get_env_setting
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+print BASE_DIR
 
 ##########################
 # SECRET KEY CONFIGURATION
@@ -67,7 +69,7 @@ ROOT_URLCONF = 'whats_next.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
