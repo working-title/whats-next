@@ -21,6 +21,6 @@ echo 'workon working-title' >> ~/.bashrc
 
 # Sync Github
 (cd /srv/project ;
- git clone https://github.com/working-title/working-title.git;
- pip install -r requirement.txt
+ git clone https://github.com/working-title/working-title.git . ;
+ pip install -r requirements.txt
 )
