@@ -14,6 +14,8 @@ sudo pip install virtualenvwrapper
 echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.bashrc
 echo 'source /usr/local/bin/virtualenvwrapper.sh' >> ~/.bashrc
 
+. ~/.bashrc # reload bash file
+
 mkvirtualenv working-title
 
 echo 'cd /srv/project' >> ~/.bashrc
