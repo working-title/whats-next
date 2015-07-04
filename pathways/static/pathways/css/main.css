@@ -84,17 +84,10 @@ h1 {
 
 }
 
-.careers form input:first-child {
-	margin-left: 0;
-	padding-left: 0;
-}
-
-.careers form input:last-child {
-	margin-right: 0;
-}
-
 .go-button {
 	text-align: center;
+	margin-top: 30px;
+	margin-bottom: -30px;
 }
 
 /*========WORK COMPARISON==========*/
