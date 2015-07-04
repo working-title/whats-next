@@ -4,8 +4,6 @@ from whats_next.settings.utils import get_env_setting
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-print BASE_DIR
-
 ##########################
 # SECRET KEY CONFIGURATION
 
