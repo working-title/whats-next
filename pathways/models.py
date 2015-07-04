@@ -11,6 +11,7 @@ class Qualification(models.Model):
 class Career(models.Model):
     name = models.CharField(max_length=256)
     income = models.PositiveIntegerField()
+    qualifications = models.ManyToManyField(Qualification)
     maori_name = models.CharField(max_length=256, blank=True)
     hours_worked_30_less = models.PositiveIntegerField()
     hours_worked_60_less = models.PositiveIntegerField()
