@@ -7,6 +7,8 @@
         <title>What's Next?</title>
 
         <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+        <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+        <script src="{% static 'js/d3.min.js' %}"></script>
         <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
         {% block head %} {%  endblock head %}
     </head>
@@ -14,7 +16,7 @@
     <body>
 
         <div class="wrapper">
-            <header>What's App</header>
+            <h1>What's App</h1>
 
             <div class="content">
             {% block content %} {%  endblock content %}
