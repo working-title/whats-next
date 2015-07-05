@@ -29,6 +29,7 @@
 	    </div>
 	</header>
 
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
 	<main>
 		<div id="breadcrumb_placeholder">
 		</div>
@@ -39,37 +40,39 @@
 		
 			</form>
 			<div class="go-button">
-				<a href="#work-comparison"><img src="{% static 'pathways/img/go.png' %}" alt="GO"></a>
+				<a href="#work-comparison"><img src="{% static 'pathways/img/go.png' %}" alt="GO" onclick="processSelectedCareers()"></a>
 			</div>
 		</div>
 
 		<div id="work-comparison" class="cf">
-			<div class="option-one">
+			<div class="option-one" id="option-one">
 				<h2>Option 1</h2>
-				<p>Salary</p>
-				<p>Hours</p>
-				<p>Employment Rate</p>
+				<canvas id="career1-salary" width="380" height="183" ></canvas>
+				<div id="career1-hours-pie" style="width: 380px; height: 183px;"></div>
+				<canvas id="career1-empl-rate" width="380" height="183" ></canvas>
 			</div>
-			<div class="option-two">
+			<div class="middle-division">
+				<h2> Category</h2>
+				<img src="{% static 'pathways/img/middle-division-big.png' %}" >
+			</div>
+			<div class="option-two" id="option-two">
 				<h2>Option 2</h2>
-				<p>Salary</p>
-				<p>Hours</p>
-				<p>Employment Rate</p>
+				<canvas id="career2-salary" width="380" height="183" ></canvas>
+				<div id="career2-hours-pie" style="width: 380px; height: 183px;"></div>
+				<canvas id="career2-empl-rate" width="380" height="183" ></canvas>
 			</div>
 		</div>
 
 		<div id="future-comparison" class="cf">
-			<div class="text option-one">
+			<div class="option-one">
 				<h2>Option 1</h2>
-				<p>Minimum Qualification</p>
-				<p>Student Debt</p>
-				<p>Years of Study</p>
+				<div id="career1-quals-pie" style="width: 380px; height: 183px;"></div>
+				<canvas id="career1-debt" width="380" height="183" ></canvas>
 			</div>
-			<div class="text option-two">
+			<div class="option-two">
 				<h2>Option 2</h2>
-				<p>Minimum Qualification</p>
-				<p>Student Debt</p>
-				<p>Years of Study</p>
+				<div id="career2-quals-pie" style="width: 380px; height: 183px;"></div>
+				<canvas id="career2-debt" width="380" height="183" ></canvas>
 			</div>
 		</div>
 	</main>
@@ -77,5 +80,10 @@
 	<footer>
 		<p class="text">Brought to you by Working Title at GovHack 2015</p>
 	</footer>
+
+ 	<script>
+	// drawSalaryCircle(document.getElementById("career1-salary"), 1, 100000);
+	// drawHoursChart(document.getElementById('career1-hours-pie'),1,20,40,20);
+</script>
 
 {% endblock %}
