@@ -8,64 +8,20 @@
 	    <div class="subheading">
 	    	<p>We are here to help you compare your options after you leave school. Just pick a subject area you’re interested in to get started:</p>
 	    </div>
-	    <div class="subjects cf">
+
+        <div class="subjects cf">
 	    	<div class="text">
+                {% for category in categories %}
+                    <div class="subject-area">
+	    			    <h3 onclick="showOptions({{ forloop.counter }})" class="interest-title">{{ category.name }}</h3>
 
-		    	<div class="subject-area">
-	    			<h3 onclick="showOptions(1)" class="interest-title">Science</h3>
-	    			<ul class="option options-hide" id="options_1">
-	    				<li>Agriculture &amp; Horticulture</li>
-	    				<li>Astronomy</li>
-	    				<li>Biology</li>
-	    				<li>Chemistry</li>
-	    				<li>Mathematics &amp; Statistics</li>
-	    				<li>Physics</li>
-	    			</ul>
-	    		</div>
-
-	    		<div class="subject-area">
-	    			<h3 onclick="showOptions(2)" class="interest-title">Technology</h3>
-	    			<ul class="option options-hide" id="options_2">
-	    				<li>Carpentry</li>
-	    				<li>Computer Software</li>
-	    				<li>Computer Hardware</li>
-	    				<li>Materials</li>
-	    				<li>Mechanics</li>
-	    				<li>Networking</li>
-	    			</ul>
-	    		</div>
-
-	    		<div class="subject-area">
-	    			<h3 onclick="showOptions(3)" class="interest-title">Arts</h3>
-	    			<ul class="option options-hide" id="options_3">
-	    				<li>Design</li>
-	    				<li>Media Studies</li>
-	    				<li>Performing Arts</li>
-	    				<li>Visual Arts</li>
-	    			</ul>
-	    		</div>
-
-	    		<div class="subject-area">
-	    			<h3 onclick="showOptions(4)" class="interest-title">Humanities</h3>
-	    			<ul class="option options-hide" id="options_4">
-	    				<li>Economics</li>
-	    				<li>Geography</li>
-	    				<li>History</li>
-	    				<li>Legal Studies</li>
-	    				<li>Social Studies</li>
-	    			</ul>
-	    		</div>
-
-	    		<div class="subject-area">
-	    			<h3 onclick="showOptions(5)" class="interest-title">Languages</h3>
-	    			<ul class="option options-hide" id="options_5">
-	    				<li>Classics</li>
-	    				<li>English</li>
-	    				<li>Foreign Language</li>
-	    				<li>Te Reo Maori</li>
-	    			</ul>
-	    		</div>
-
+                        <ul class="option options-hide" id="options_{{ forloop.counter }}">
+                        {% for interest in category.interests.all %}
+                            <li data-id="{{ interest.pk }}">{{ interest.name }}</li>
+                        {% endfor %}
+                        </ul>
+	    		    </div>
+                {% endfor %}
 	    	</div>
 	    </div>
 
