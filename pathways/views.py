@@ -1,6 +1,8 @@
-from django.shortcuts import render_to_response
-from pathways.models import Career
+from django.shortcuts import render_to_response, render
+from pathways.models import Career, Category, Interest
+
 
 def index(request):
-    output = Career.objects.all()
-    return render_to_response("pathways/index.html")
+    categories = Category.objects.all()
+    interests = Interest.objects.all()
+    return render(request, "pathways/index.html", locals())
