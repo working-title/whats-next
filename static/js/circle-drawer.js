@@ -86,9 +86,9 @@ function drawHoursChart(div, option, less30, between3060, more60) {
 function drawQualificationChart(div, option, val1, val2, val3, val4) {
 
   var data = google.visualization.arrayToDataTable([
-    ['Qualification', 'Level Reached'],
-    ['No qualification',     val1],
-    ['School',  val2]
+    ['Qual', 'Level Reached'],
+    ['No qualification', val1],
+    ['School',  val2],
     ['Bachelors degree',    val3],
     ['Degree above bachelors',    val4]
   ]);
