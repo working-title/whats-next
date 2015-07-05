@@ -131,9 +131,20 @@ h1 {
 
 /*========WORK COMPARISON==========*/
 
+.section-header-bg {
+	background-color: #252222;
+	height: 60px;
+}
+
+h2 {
+	color: #ecd328;
+}
+
 #work-comparison {
 	width: 960px;
 	margin: 0 auto;
+	margin-top: -66px;
+	margin-bottom: 30px;
 }
 
 .option-one {
@@ -156,14 +167,20 @@ h1 {
 }
 
 .filler {
-	height: 66px;
+	height: 75px;
 }
 
 /*========FUTURE COMPARISON==========*/
 
+.future-header {
+	text-align: center;
+}
+
 #future-comparison {
 	width: 960px;
 	margin: 0 auto;
+	margin-top: -66px;
+	margin-bottom: 30px;
 }
 
 .option-one {
