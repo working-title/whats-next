@@ -27,18 +27,22 @@ function drawSalaryCircle(canvas, option, salary){
   }
 }
 
-function drawEmploymentRateCircle(canvas, colour, rate, x, y){
-  var radius = 5;
-  for(var i = 0; i < 10; i++){
-    if(salary < salaryOptions[i]){
-      radius = scaleOptions[i];
-      break;
-    }
+function drawEmploymentRateCircle(canvas, option, rate){
+  var radius = 20;
+  if(option == 1){
+    drawCircle(canvas, colorPurple, radius, circleX, circleY);
+  } else {
+    drawCircle(canvas, colorGreen, radius, circleX, circleY);
   }
-  if (radius == 0){
-    radius = scaleOptions[9];
+}
+
+function drawDebtCircle(canvas, option, rate){
+  var radius = 30;
+  if(option == 1){
+    drawCircle(canvas, colorPurple, radius, circleX, circleY);
+  } else {
+    drawCircle(canvas, colorGreen, radius, circleX, circleY);
   }
-  drawCircle(canvas, colour, radius, x, y);
 }
 
 function drawCircle (canvas, colour, radius, x, y){
