@@ -89,6 +89,13 @@ h1 {
 
 .options-selected {
 	border-bottom: 1.5px solid #ecd328;
+	font-weight: 600;
+}
+
+.career-option {
+	/*text-align: center;*/
+	width: 300px;
+	margin: 0 auto;
 }
 
 /*========BREADCRUMB==========*/
