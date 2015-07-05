@@ -44,27 +44,40 @@ h1 {
 .subjects {
 	background-color: #252222;
 	color: #ecd328;
-	text-align: center;
+	padding: 15px;
+	padding-bottom: 25px;
 }
 
-.subjects ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-.subjects ul li {
+.subjects h3 {
 	text-transform: uppercase;
+	margin: 0;
+	margin-left: 18px;
 	display: inline-block;
 	padding: 0.5em 1em;
+	font-size: 20px;
 }
 
-.subjects ul li:first-child {
-	padding-left: 0;
+.subject-area {
+	float: left;
 }
 
-.subjects ul li:last-child {
-	padding-right: 0;
+.subject-area ul {
+	list-style-type: none;
+	margin: 0;
+	padding-top: 7px;
+
+}
+
+.options-hide {
+	display: none;
+}
+
+.interest-selected {
+	border-bottom: 3px solid #ecd328;
+}
+
+.options-selected {
+	border-bottom: 1.5px solid #ecd328;
 }
 
 /*========BREADCRUMB==========*/
