@@ -3,6 +3,11 @@
 
 {% block content%}
 	<header>
+		<script type="text/javascript">
+			var greyedOutGoPath = "{% static 'pathways/img/grey-go.png' %}"
+			var goPath = "{% static 'pathways/img/go.png' %}"
+		</script>
+		
 		<div class="ribbon"></div>
 	    <h1><img src="{% static 'pathways/img/whats-next-logo.png' %}" alt="what's next"></h1>
 	    <div class="subheading">
@@ -40,7 +45,7 @@
 
 			</form>
 			<div class="go-button">
-				<img src="{% static 'pathways/img/go.png' %}" alt="GO" onclick="processSelectedCareers()">
+				<img id="go-button-image" src="{% static 'pathways/img/grey-go.png' %}" alt="GO" onclick="processSelectedCareers()">
 			</div>
 		</div>
 
