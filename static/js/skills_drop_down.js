@@ -50,6 +50,9 @@ function optionSelect (event) {
 		
 		selectedInterest = target.text();
 		selected += 1;
+		
+		var optionId = target.data("id");
+		getCareers(optionId);
 	} else {
 		selectedInterest = "";
 		selected -= 1;	

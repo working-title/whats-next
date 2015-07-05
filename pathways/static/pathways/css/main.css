@@ -59,6 +59,7 @@ h1 {
 
 .subject-area {
 	float: left;
+	width: 192px;
 }
 
 .subject-area ul {
