@@ -148,7 +148,6 @@ h1 {
 	width: 200px;
 }
 
-
 .option-two {
 	float: right;
 	text-align: center;
@@ -163,18 +162,28 @@ h1 {
 /*========FUTURE COMPARISON==========*/
 
 #future-comparison {
-	max-width: 700px;
+	width: 960px;
 	margin: 0 auto;
 }
 
 .option-one {
 	float: left;
-	max-width: 350px;
+	text-align: center;
+	width: 380px;
+}
+
+.middle-division{
+	/*float: middle;*/
+	float: left;
+	text-align: center;
+	width: 200px;
 }
 
 .option-two {
 	float: right;
-	max-width: 350px;
+	text-align: center;
+
+	width: 380px;
 }
 /*========FOOTER==========*/
  footer {
