@@ -37,6 +37,7 @@ function optionSelect (event) {
 	// Get it as a jquery object so its easier to play with
 	var target = $(event.target);
 	var parent = target.parent().parent();
+	console.log(parent);
 	
 	// If it hasnt been selected
 	if (!target.hasClass("options-selected")) {
@@ -62,7 +63,8 @@ function optionSelect (event) {
 	
 	// Changes the color of the button when option is selected
 	var button = $(".interest-title", parent);
-	button.toggleClass("options-selected");
+	console.log(button);
+	button.toggleClass("interest-selected");
 	// button.toggleClass("btn-info");
 	
 	// Update the current career breadcrumb
