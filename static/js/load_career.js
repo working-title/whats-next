@@ -10,6 +10,7 @@ function processSelectedCareers() {
 			return;
 		}
 		
+		$("#comparison").show();
 		window.location.hash = "#work-comparison";
 
 		$("#alert_placeholder").html("");

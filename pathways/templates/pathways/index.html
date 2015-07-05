@@ -2,52 +2,54 @@
 {% load staticfiles %}
 
 {% block content%}
-	<header>
-		<script type="text/javascript">
-			var greyedOutGoPath = "{% static 'pathways/img/grey-go.png' %}"
-			var goPath = "{% static 'pathways/img/go.png' %}"
-		</script>
-		
-		<div class="ribbon"></div>
-	    <h1><img src="{% static 'pathways/img/whats-next-logo.png' %}" alt="what's next"></h1>
-	    <div class="subheading">
-	    	<p>We are here to help you compare your options after you leave school. Just pick a subject area you’re interested in to get started:</p>
-	    </div>
+<header>
+	<script type="text/javascript">
+		var greyedOutGoPath = "{% static 'pathways/img/grey-go.png' %}"
+		var goPath = "{% static 'pathways/img/go.png' %}"
+	</script>
 
-        <div class="subjects cf">
-	    	<div class="text">
-                {% for category in categories %}
-                    <div class="subject-area">
-	    			    <h3 onclick="showOptions({{ forloop.counter }})" class="interest-title">{{ category.name }}</h3>
+	<div class="ribbon"></div>
+	<h1><img src="{% static 'pathways/img/whats-next-logo.png' %}" alt="what's next"></h1>
+	<div class="subheading">
+		<p>We are here to help you compare your options after you leave school. Just pick a subject area you’re interested in to get started:</p>
+	</div>
 
-                        <ul class="option options-hide" id="options_{{ forloop.counter }}">
-                        {% for interest in category.interests.all %}
-                            <li data-id="{{ interest.pk }}">{{ interest.name }}</li>
-                        {% endfor %}
-                        </ul>
-	    		    </div>
-                {% endfor %}
-	    	</div>
-	    </div>
+	<div class="subjects cf">
+		<div class="text">
+			{% for category in categories %}
+			<div class="subject-area">
+				<h3 onclick="showOptions({{ forloop.counter }})" class="interest-title">{{ category.name }}</h3>
 
-	    <div id="alert_placeholder">
-	    </div>
-	</header>
+				<ul class="option options-hide" id="options_{{ forloop.counter }}">
+					{% for interest in category.interests.all %}
+					<li data-id="{{ interest.pk }}">{{ interest.name }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div id="alert_placeholder">
+	</div>
+</header>
 
 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
-	<main>
-		<div id="breadcrumb_placeholder">
-		</div>
+<main>
+	<div id="breadcrumb_placeholder">
+	</div>
 
-		<div id="temp-careers" class="text careers jumbotron">
-			<p>Choose two careers to compare:</p>
-			<form id="career-options" action="#work-comparison" method="post">
+	<div id="temp-careers" class="text careers jumbotron">
+		<p>Choose two careers to compare:</p>
+		<form id="career-options" action="#work-comparison" method="post">
 
-			</form>
-			<div class="go-button">
-				<img id="go-button-image" src="{% static 'pathways/img/grey-go.png' %}" alt="GO" onclick="processSelectedCareers()">
-			</div>
+		</form>
+		<div class="go-button">
+			<img id="go-button-image" src="{% static 'pathways/img/grey-go.png' %}" alt="GO" onclick="processSelectedCareers()">
 		</div>
+	</div>
+
+	<div id="comparison">
 
 		<div class="section-header-bg"></div>
 		<div id="work-comparison" class="cf">
@@ -89,13 +91,15 @@
 				<canvas id="career2-debt" width="380" height="183" ></canvas>
 			</div>
 		</div>
-	</main>
+		</main>
 
-	<footer>
-		<div class="text">
-			<img src="{% static 'pathways/img/govhack-logo.png' %}" alt="GovHack 2015">
-			Brought to you by <strong>Working Title</strong> as part of GovHack 2015 Wellington, New Zealand.
-		</div>
-	</footer>
+	</div>
+
+<footer>
+	<div class="text">
+		<img src="{% static 'pathways/img/govhack-logo.png' %}" alt="GovHack 2015">
+		Brought to you by <strong>Working Title</strong> as part of GovHack 2015 Wellington, New Zealand.
+	</div>
+</footer>
 
 {% endblock %}

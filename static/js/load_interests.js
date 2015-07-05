@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	$("#temp-careers").hide();
+	$("#comparison").hide();
+	
 });
 
 function getCareers(interestId) {
