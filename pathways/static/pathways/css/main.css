@@ -103,7 +103,7 @@ h1 {
 .breadcrumb {
 	max-width: 960px;
 	margin: 0 auto;
-	background-color: #fafafa; 
+	background-color: #fafafa;
 	text-align: center;
 }
 
@@ -132,18 +132,29 @@ h1 {
 /*========WORK COMPARISON==========*/
 
 #work-comparison {
-	max-width: 700px;
+	width: 960px;
 	margin: 0 auto;
 }
 
 .option-one {
 	float: left;
-	max-width: 350px;
+	text-align: center;
+	width: 380px;
 }
+
+.middle-division{
+	/*float: middle;*/
+	float: left;
+	text-align: center;
+	width: 200px;
+}
+
 
 .option-two {
 	float: right;
-	max-width: 350px;
+	text-align: center;
+
+	width: 380px;
 }
 
 /*========FUTURE COMPARISON==========*/
@@ -162,10 +173,8 @@ h1 {
 	float: right;
 	max-width: 350px;
 }
-
 /*========FOOTER==========*/
  footer {
  	border-top: 3px solid #252222;
  	padding: 20px 0;
  }
-
