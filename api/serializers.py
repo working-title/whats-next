@@ -16,7 +16,11 @@ class CareerSerializer(serializers.HyperlinkedModelSerializer):
                   'maori_name',
                   'hours_worked_30_less',
                   'hours_worked_60_less',
-                  'hours_worked_60_more')
+                  'hours_worked_60_more',
+                  'no_qualification',
+                  'school',
+                  'post_school',
+                  'degree')
 
 class InterestSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
