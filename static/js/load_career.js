@@ -4,6 +4,11 @@ function processSelectedCareers() {
 	$("#career-options input:checked").each(function() {
 		selected.push($(this));
 	}).promise().done(function() {
+		if (selected.length != 2) {
+			showAlert("You must have two selected");
+			return;
+		}
+		
 		var id1 = $(selected[0]).parent().data("id");
 		var id2 = $(selected[1]).parent().data("id");
 

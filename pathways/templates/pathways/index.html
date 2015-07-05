@@ -34,16 +34,13 @@
 		<div id="breadcrumb_placeholder">
 		</div>
 
-		<div class="text careers jumbotron">
-			<p>Choose 2 careers to compare:</p>
+		<div id="temp-careers" class="text careers jumbotron">
+			<p>Choose two careers to compare:</p>
 			<form id="career-options" action="#work-comparison" method="post">
-				<input type="checkbox" name="career-options" value="Career"> Career
-				<input type="checkbox" name="career-options" value="Career"> Career
-				<input type="checkbox" name="career-options" value="Career"> Career
-				<input type="checkbox" name="career-options" value="Career"> Career
+
 			</form>
 			<div class="go-button">
-				<img src="{% static 'pathways/img/go.png' %}" alt="GO" onclick="processSelectedCareers()">
+				<a href="#work-comparison"><img src="{% static 'pathways/img/go.png' %}" alt="GO" onclick="processSelectedCareers()"></a>
 			</div>
 		</div>
 
@@ -55,7 +52,7 @@
 				<canvas id="career1-empl-rate" width="380" height="183" ></canvas>
 			</div>
 			<div class="middle-division">
-				<h2> x</h2>
+				<div class="filler"></div>
 				<img src="{% static 'pathways/img/middle-division-big.png' %}" >
 			</div>
 			<div class="option-two" id="option-two">
@@ -84,8 +81,8 @@
 		</div>
 	</main>
 
-	<footer class="text">
-		<p>Brought to you by Working Title at GovHack 2015</p>
+	<footer>
+		<p class="text">Brought to you by Working Title at GovHack 2015</p>
 	</footer>
 
 {% endblock %}
