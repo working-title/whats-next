@@ -143,12 +143,10 @@ h1 {
 }
 
 .middle-division{
-	/*float: middle;*/
 	float: left;
 	text-align: center;
 	width: 200px;
 }
-
 
 .option-two {
 	float: right;
@@ -157,21 +155,35 @@ h1 {
 	width: 380px;
 }
 
+.filler {
+	height: 66px;
+}
+
 /*========FUTURE COMPARISON==========*/
 
 #future-comparison {
-	max-width: 700px;
+	width: 960px;
 	margin: 0 auto;
 }
 
 .option-one {
 	float: left;
-	max-width: 350px;
+	text-align: center;
+	width: 380px;
+}
+
+.middle-division{
+	/*float: middle;*/
+	float: left;
+	text-align: center;
+	width: 200px;
 }
 
 .option-two {
 	float: right;
-	max-width: 350px;
+	text-align: center;
+
+	width: 380px;
 }
 
 /*========FOOTER==========*/
