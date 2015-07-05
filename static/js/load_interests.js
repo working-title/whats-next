@@ -1,9 +1,12 @@
 $(document).ready(function() {
 	$("#temp-careers").hide();
+	$("#comparison").hide();
+	
 });
 
 function getCareers(interestId) {
 	$("#temp-careers").show();
+	document.getElementById("go-button-image").src = greyedOutGoPath;
 
 	$.ajax({
 		url: '/api/interests/' + interestId
@@ -42,14 +45,22 @@ function insertCareer(url) {
 		$(careerDiv).data("id", careerId);
 		$(careerDiv).addClass("career-option");
 		
-		careerInput.addEventListener("change", function() {
-			console.log("dwadw");	
-		});
+		careerDiv.addEventListener("click", boxSelected)
 	}).fail(function() {
 		console.error("Error");
 	});
 }
 
 function boxSelected(event) {
-	console.log("fssrfesr");
+	var numSelected = 0;
+	
+	$("#career-options input:checked").each(function() {
+		numSelected++;
+	})
+	
+	if (numSelected == 2) {
+		document.getElementById("go-button-image").src = goPath;
+	} else {
+		document.getElementById("go-button-image").src = greyedOutGoPath;
+	}
 }

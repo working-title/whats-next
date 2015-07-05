@@ -205,6 +205,11 @@ h2 {
 
 /*========FOOTER==========*/
  footer {
+ 	background-color: #fff;
  	border-top: 3px solid #252222;
  	padding: 20px 0;
+ }
+
+ footer img {
+ 	margin-right: 25px;
  }

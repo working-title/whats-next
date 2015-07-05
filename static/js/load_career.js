@@ -9,7 +9,7 @@ function processSelectedCareers() {
 			window.location.hash = "";
 			return;
 		}
-
+		$("#comparison").show();
 		window.location.hash = "#work-comparison";
 
 		$("#alert_placeholder").html("");
