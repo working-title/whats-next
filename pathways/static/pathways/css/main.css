@@ -68,6 +68,11 @@ h1 {
 
 }
 
+.subject-area ul li {
+	margin-left: -20px;
+	padding-left: 20px;
+}
+
 .options-hide {
 	display: none;
 }
