@@ -11,15 +11,15 @@ function processSelectedCareers() {
 		}
 		
 		window.location.hash = "#work-comparison";
-		
+
 		$("#alert_placeholder").html("");
-		
+
 		var id1 = $(selected[0]).parent().data("id");
 		var id2 = $(selected[1]).parent().data("id");
 
 		drawCareer1(id1);
 		drawCareer2(id2);
-		
+
 		window.location.hash = "#work-comparison";
 	});
 }
@@ -33,7 +33,7 @@ function drawCareer1(id) {
 		drawHoursChart(document.getElementById('career1-hours-pie'),1, data.hours_worked_30_less, data.hours_worked_60_less, data.hours_worked_60_more);
 		drawEmploymentRateCircle(document.getElementById('career1-empl-rate'), 1, 70);
 		drawQualificationChart(document.getElementById('career1-quals-pie'),1, data.no_qualification, data.school, data.post_school, data.degree);
-		drawDebtCircle(document.getElementById("career1-debt"), 1, 10000);
+		drawDebtCircle(document.getElementById("career1-debt"), 1, data.qualification[0].debt);
 	}).fail(function() {
 		console.error("Error");
 	});
@@ -48,7 +48,7 @@ function drawCareer2(id) {
 		drawHoursChart(document.getElementById('career2-hours-pie'),2, data.hours_worked_30_less, data.hours_worked_60_less, data.hours_worked_60_more);
 		drawEmploymentRateCircle(document.getElementById('career2-empl-rate'), 2, 70);
 		drawQualificationChart(document.getElementById('career2-quals-pie'),2, data.no_qualification, data.school, data.post_school, data.degree);
-		drawDebtCircle(document.getElementById("career2-debt"), 2, 10000);
+		drawDebtCircle(document.getElementById("career2-debt"), 2, data.qualification[0].debt);
 	}).fail(function() {
 		console.error("Error");
 	});
