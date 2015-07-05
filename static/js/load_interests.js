@@ -6,7 +6,7 @@ function getCareers(interestId) {
 	$("#temp-careers").show();
 
 	$.ajax({
-		url: 'http://localhost:8000/api/interests/' + interestId
+		url: '/api/interests/' + interestId
 	}).done(function(data) {
 		var careers = data["careers"];
 		console.log(data);
@@ -40,12 +40,16 @@ function insertCareer(url) {
 		$("#career-options").append(careerDiv);
 
 		$(careerDiv).data("id", careerId);
-		$(careerDiv).addClass("career-option")
+		$(careerDiv).addClass("career-option");
+		
+		careerInput.addEventListener("change", function() {
+			console.log("dwadw");	
+		});
 	}).fail(function() {
 		console.error("Error");
 	});
 }
 
-function ajaxCall(url, id) {
-
+function boxSelected(event) {
+	console.log("fssrfesr");
 }
