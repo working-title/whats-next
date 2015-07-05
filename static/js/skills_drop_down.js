@@ -37,31 +37,38 @@ function optionSelect (event) {
 	// Get it as a jquery object so its easier to play with
 	var target = $(event.target);
 	var parent = target.parent().parent();
+	console.log(parent);
 	
 	// If it hasnt been selected
-	if (target.hasClass("btn-default")) {
+	if (!target.hasClass("options-selected")) {
 		// Make sure the user isnt trying to select more than 1 interest
 		if (selected == 1) {
-			showAlert("Woh! Nice Try!");
+			showAlert("De-select your interest first to select another one!");
 			
 			return;
 		}
 		
 		selectedInterest = target.text();
 		selected += 1;
+		
+		var optionId = target.data("id");
+		getCareers(optionId);
 	} else {
 		selectedInterest = "";
 		selected -= 1;	
+		$("#alert_placeholder").html("");
+		resetBreadcrumb();
 	}
 	
 	// Change the class of the option so we know its selected
-	target.toggleClass("btn-default");
-	target.toggleClass("btn-primary");
+	target.toggleClass("options-selected");
+	// target.toggleClass("btn-primary");
 	
 	// Changes the color of the button when option is selected
 	var button = $(".interest-title", parent);
-	button.toggleClass("btn-default");
-	button.toggleClass("btn-info");
+	console.log(button);
+	button.toggleClass("interest-selected");
+	// button.toggleClass("btn-info");
 	
 	// Update the current career breadcrumb
 	updateBreadcrumb(button.text(), target.text());

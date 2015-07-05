@@ -16,6 +16,10 @@ class Career(models.Model):
     hours_worked_30_less = models.PositiveIntegerField()
     hours_worked_60_less = models.PositiveIntegerField()
     hours_worked_60_more = models.PositiveIntegerField()
+    no_qualification = models.PositiveIntegerField(default=0)
+    school = models.PositiveIntegerField(default=0)
+    post_school = models.PositiveIntegerField(default=0)
+    degree = models.PositiveIntegerField(default=0)
 
     def __unicode__(self):              # __unicode__ on Python 2
         return self.name

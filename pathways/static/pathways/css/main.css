@@ -44,27 +44,58 @@ h1 {
 .subjects {
 	background-color: #252222;
 	color: #ecd328;
-	text-align: center;
+	padding: 15px;
+	padding-bottom: 25px;
 }
 
-.subjects ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-.subjects ul li {
+.subjects h3 {
 	text-transform: uppercase;
+	margin: 0;
+	margin-left: 18px;
 	display: inline-block;
 	padding: 0.5em 1em;
+	font-size: 20px;
+	display: inline-block;
 }
 
-.subjects ul li:first-child {
-	padding-left: 0;
+.subjects h3:hover {
+	cursor: pointer;
 }
 
-.subjects ul li:last-child {
-	padding-right: 0;
+.subject-area {
+	float: left;
+	width: 192px;
+}
+
+.subject-area ul {
+	list-style-type: none;
+	margin: 0;
+	padding-top: 7px;
+
+}
+
+.subject-area ul li {
+	margin-left: -20px;
+	padding-left: 20px;
+}
+
+.options-hide {
+	display: none;
+}
+
+.interest-selected {
+	border-bottom: 3px solid #ecd328;
+}
+
+.options-selected {
+	border-bottom: 1.5px solid #ecd328;
+	font-weight: 600;
+}
+
+.career-option {
+	/*text-align: center;*/
+	width: 300px;
+	margin: 0 auto;
 }
 
 /*========BREADCRUMB==========*/
@@ -78,10 +109,18 @@ h1 {
 
 /*========CAREER CHOICES==========*/
 
+.careers form {
+	margin: 0 30px;
+}
+
 .careers form input {
 	margin: 0.5em 1em;
 	padding: 0.5em 1em;
 
+}
+
+.careers p {
+	text-align: center;
 }
 
 .go-button {
@@ -134,3 +173,8 @@ h1 {
 	float: right;
 	max-width: 350px;
 }
+/*========FOOTER==========*/
+ footer {
+ 	border-top: 3px solid #252222;
+ 	padding: 20px 0;
+ }

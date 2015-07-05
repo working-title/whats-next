@@ -50,3 +50,5 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+INSTALLED_APPS += ('debug_toolbar',)
