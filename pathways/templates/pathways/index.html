@@ -33,16 +33,13 @@
 		<div id="breadcrumb_placeholder">
 		</div>
 
-		<div class="text careers jumbotron">
-			<p>Choose 2 careers to compare:</p>
+		<div id="temp-careers" class="text careers jumbotron">
+			<p>Choose two careers to compare:</p> 
 			<form id="career-options" action="#work-comparison" method="post">
-				<input type="checkbox" name="career-options" value="Career"> Career
-				<input type="checkbox" name="career-options" value="Career"> Career
-				<input type="checkbox" name="career-options" value="Career"> Career
-				<input type="checkbox" name="career-options" value="Career"> Career
+		
 			</form>
 			<div class="go-button">
-				<img src="{% static 'pathways/img/go.png' %}" alt="GO" onclick="processSelectedCareers()">
+				<a href="#work-comparison"><img src="{% static 'pathways/img/go.png' %}" alt="GO" onclick="processSelectedCareers()"></a>
 			</div>
 		</div>
 
