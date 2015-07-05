@@ -1,4 +1,10 @@
+$(document).ready(function() {
+	$("#temp-careers").hide();
+});
+
 function getCareers(interestId) {
+	$("#temp-careers").show();
+
 	$.ajax({
 		url: 'http://localhost:8000/api/interests/' + interestId
 	}).done(function(data) {
@@ -34,6 +40,7 @@ function insertCareer(url) {
 		$("#career-options").append(careerDiv);
 
 		$(careerDiv).data("id", careerId);
+		$(careerDiv).addClass("career-option")
 	}).fail(function() {
 		console.error("Error");
 	});
