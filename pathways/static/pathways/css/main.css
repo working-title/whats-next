@@ -55,6 +55,11 @@ h1 {
 	display: inline-block;
 	padding: 0.5em 1em;
 	font-size: 20px;
+	display: inline-block;
+}
+
+.subjects h3:hover {
+	cursor: pointer;
 }
 
 .subject-area {
@@ -97,10 +102,18 @@ h1 {
 
 /*========CAREER CHOICES==========*/
 
+.careers form {
+	margin: 0 30px;
+}
+
 .careers form input {
 	margin: 0.5em 1em;
 	padding: 0.5em 1em;
 
+}
+
+.careers p {
+	text-align: center;
 }
 
 .go-button {
@@ -143,5 +156,9 @@ h1 {
 	max-width: 350px;
 }
 
-
+/*========FOOTER==========*/
+ footer {
+ 	border-top: 3px solid #252222;
+ 	padding: 20px 0;
+ }
 
