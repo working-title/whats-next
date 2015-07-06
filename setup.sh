@@ -49,8 +49,6 @@ echo 'Cloning our awesome code repo!'
  pip install -r requirements.txt
 )
 
-DEV_PASSWORD='vagrant'
-
 export DEBIAN_FRONTEND=noninteractive
 
 sudo -E apt-get install -y mysql-server
