@@ -22,7 +22,7 @@ TEMPLATE_DEBUG = DEBUG
 # SECURITY CONFIGURATION
 
 # This needs to be filled out once we have a domain
-ALLOWED_HOSTS = [get_env_setting_multiline_list('ALLOWED_HOSTS')]
+ALLOWED_HOSTS = [get_env_setting('ALLOWED_HOSTS')]
 
 # SECURITY CONFIGURATION
 ########################
