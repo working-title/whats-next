@@ -7,6 +7,8 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 ##########################
 # SECRET KEY CONFIGURATION
 
+# This was only temporary for the hackathon - it will be removed and required to be set
+# as an environment variable in development soon. It already is in production.
 SECRET_KEY = 'h%^yu2b9j!cn-@ql6tuhw1t3+-1x50$sf_2j-vt!yv+8)(n=_p'
 
 # SECRET KEY CONFIGURATION

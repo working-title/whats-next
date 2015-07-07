@@ -1,5 +1,13 @@
 from .base import *
 
+##########################
+# SECRET KEY CONFIGURATION
+
+SECRET_KEY = get_env_setting('SECRET_KEY', error_msg='You need to set a secret key!')
+
+# SECRET KEY CONFIGURATION
+##########################
+
 
 #####################
 # DEBUG CONFIGURATION
