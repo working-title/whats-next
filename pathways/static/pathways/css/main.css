@@ -79,6 +79,10 @@ h1 {
 	padding-left: 20px;
 }
 
+.subject-area ul li:hover {
+	cursor: pointer;
+}
+
 .options-hide {
 	display: none;
 }
