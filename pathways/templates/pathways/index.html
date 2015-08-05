@@ -7,98 +7,97 @@
 		var greyedOutGoPath = "{% static 'pathways/img/grey-go.png' %}"
 		var goPath = "{% static 'pathways/img/go.png' %}"
 	</script>
-
-	<div class="ribbon"></div>
-	<h1><img src="{% static 'pathways/img/whats-next-logo.png' %}" alt="what's next"></h1>
-	<div class="subheading">
-		<p>We are here to help you compare your options after you leave school. Just pick a subject area you’re interested in to get started:</p>
-	</div>
-
-	<div class="subjects cf">
-		<div class="text">
-			{% for category in categories %}
-			<div class="subject-area">
-				<h3 onclick="showOptions({{ forloop.counter }})" class="interest-title">{{ category.name }}</h3>
-
-				<ul class="option options-hide" id="options_{{ forloop.counter }}">
-					{% for interest in category.interests.all %}
-					<li data-id="{{ interest.pk }}">{{ interest.name }}</li>
-					{% endfor %}
-				</ul>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
-
-	<div id="alert_placeholder">
-	</div>
 </header>
 
-<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
-<main>
-	<div id="breadcrumb_placeholder">
+<!-- ======================= NAV ======================= -->
+<nav class="navbar navbar-default" role="navigation">
+<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<div class="container">
+	      <a class="navbar-brand" href="./?page=dash">what's next <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+	    </div>
+	</div>
+</nav> <!-- ======================= END NAV ======================= -->
+
+<div id="screen-one"> <!-- ======================= ABOVE FOLD ======================= -->
+	<div class="row text-center">
+		<div class="container">
+			<p>Not sure what to do after high school? Can’t pick a career?</p>
+			<p class="lead">Use <strong>what’s next</strong> to explore your options!</p>
+		</div>
 	</div>
 
-	<div id="temp-careers" class="text careers jumbotron">
-		<p>Choose two careers to compare:</p>
-		<form id="career-options" action="#work-comparison" method="post">
+	<div class="row">
+		<div class="container">
+			<div class="col-sm-4 top-tip">
+				<p>Choose your interests and get career field suggestions based on the tags you generate!</p>
+			</div>
 
-		</form>
-		<div class="go-button">
-			<img id="go-button-image" src="{% static 'pathways/img/grey-go.png' %}" alt="GO" onclick="processSelectedCareers()">
+			<div class="col-sm-4 text-center">
+				<img class="img-responsive" src="{% static 'pathways/img/compass.png' %}" alt="Compass">
+			</div>
+
+			<div class="col-sm-4 text-right bottom-tip">
+				<p>Compare careers side by side for salary, hiring rates, student debt and more!</p>
+			</div>
 		</div>
 	</div>
 
-	<div id="comparison">
-
-		<div class="section-header-bg"></div>
-		<div id="work-comparison" class="cf">
-			<div class="option-one" id="option-one">
-				<h2 id="option1name">Option 1</h2>
-				<canvas id="career1-salary" width="380" height="183" ></canvas>
-				<div id="career1-hours-pie" style="width: 380px; height: 183px;"></div>
-				<canvas id="career1-empl-rate" width="380" height="183" ></canvas>
-			</div>
-			<div class="middle-division">
-				<div class="filler"></div>
-				<img src="{% static 'pathways/img/middle-division-big.png' %}" alt="salary, hours, employment rate">
-			</div>
-			<div class="option-two" id="option-two">
-				<h2 id="option2name">Option 2</h2>
-				<canvas id="career2-salary" width="380" height="183" ></canvas>
-				<div id="career2-hours-pie" style="width: 380px; height: 183px;"></div>
-				<canvas id="career2-empl-rate" width="380" height="183" ></canvas>
+	<div class="row action">
+		<div class="container">
+			<div class="col-sm-offset-4 col-sm-4">
+				<button class="btn btn-block btn-success">
+	                Start Looking
+	            </button>
 			</div>
 		</div>
-
-		<div class="future-header">
-			<img src="{% static 'pathways/img/how-to.png' %}" alt="How do I get there?">
-		</div>
-		<div class="section-header-bg"></div>
-		<div id="future-comparison" class="cf">
-			<div class="option-one">
-				<h2 id="option1name2">Option 1</h2>
-				<div id="career1-quals-pie" style="width: 380px; height: 183px;"></div>
-				<canvas id="career1-debt" width="380" height="183" ></canvas>
-			</div>
-			<div class="middle-division">
-				<div class="filler"></div>
-				<img src="{% static 'pathways/img/middle-division-future.png' %}" alt="minimum qualification, student debt">
-			</div>
-			<div class="option-two">
-				<h2 id="option2name2">Option 2</h2>
-				<div id="career2-quals-pie" style="width: 380px; height: 183px;"></div>
-				<canvas id="career2-debt" width="380" height="183" ></canvas>
-			</div>
-		</div>
-		</main>
-
 	</div>
+</div> <!-- ======================= END ABOVE FOLD ======================= -->
+
+
+<div id="screen-tags"> <!-- ======================= TAGS ======================= -->
+	<div class="row text-center">
+		<div class="container">
+			<p>Tell us a bit more about your interests (max of 5).</p>
+			<p class="lead">Start typing below!</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="container">
+			<div class="col-sm-offset-3 col-sm-6">
+				<input id="taggle" class="form-control input-lg" name="taggle"
+                  placeholder="eg: writing, photography, film">
+			</div>
+		</div>
+	</div>
+
+	<div class="row action">
+		<div class="container">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<button class="btn btn-block btn-blue">
+	                Next Step
+	            </button>
+			</div>
+		</div>
+	</div>
+</div> <!-- ======================= END TAGS ======================= -->
+
+<div id="screen-industry"> <!-- ======================= INDUSTRY ======================= -->
+	<div class="row text-center">
+		<div class="container">
+			<p>Here are some industries we think you might like.<p>
+			<p class="lead">Pick one to explore!</p>
+		</div>
+	</div>
+</div> <!-- ======================= END INDUSTRY ======================= -->
 
 <footer>
-	<div class="text">
-		<img src="{% static 'pathways/img/govhack-logo.png' %}" alt="GovHack 2015">
-		Brought to you by <strong>Working Title</strong> as part of GovHack 2015 Wellington, New Zealand.
+	<div class="row text-center">
+		<div class="container">
+			<p>Brought to you by team <strong>Working Title</strong> as part of GovHack 2015 Wellington, New Zealand.</p>
+		</div>
 	</div>
 </footer>
 

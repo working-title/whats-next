@@ -14,197 +14,103 @@ body {
     clear: both;
 }
 
-/*========HEADER==========*/
-
-.ribbon {
-	height: 30px;
-	background-color: #252222;
+/*========NAV==========*/
+.navbar {
+	margin-bottom: 0;
 }
 
-h1 {
-	margin-top: -30px;
-	text-align: center;
+.navbar-default {
+	background-color: #416db4;
+	border-color: transparent;
 }
 
-.subheading {
-	max-width: 700px;
-	margin: 0 auto;
-	padding: 30px 0;
-	font-size: 22px;
-	text-align: center;
+.navbar {
+	border-radius: 0px;
 }
 
-.text {
-	max-width: 960px;
-	margin: 0 auto;
+/* title */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #fff;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #416db4;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #416db4;
 }
 
-/*========SUBJECT CHOICES==========*/
-
-.subjects {
-	background-color: #252222;
-	color: #ecd328;
-	padding: 15px;
-	padding-bottom: 25px;
+/*========BUTTONS==========*/
+.btn-blue {
+	background-color: #39a3db;
+	color: #fff;
 }
 
-.subjects h3 {
-	text-transform: uppercase;
-	margin: 0;
-	margin-left: 18px;
+.btn-blue:hover {
+	background-color: #2074aa;
+	border-color: #185881;
+	color: #fff;
+}
+
+/*========IMAGES==========*/
+.img-responsive {
 	display: inline-block;
-	padding: 0.5em 1em;
-	font-size: 20px;
-	display: inline-block;
 }
 
-.subjects h3:hover {
-	cursor: pointer;
+/*========HOME==========*/
+
+#screen-one {
+	background-color: #39a3db;
+	color: #fff;
+	padding: 2em;
 }
 
-.subject-area {
-	float: left;
-	width: 192px;
+
+.top-tip {
+	border-top: dashed 2px #fff;
+	padding-top: 0.5em;
 }
 
-.subject-area ul {
-	list-style-type: none;
-	margin: 0;
-	padding-top: 7px;
-
+.bottom-tip {
+	border-bottom: dashed 2px #fff;
+	padding-top: 15em;
 }
 
-.subject-area ul li {
-	margin-left: -20px;
-	padding-left: 20px;
+@media (max-width: 767px) {
+	.bottom-tip {
+		padding-top: 2em;
+	}
 }
 
-.subject-area ul li:hover {
-	cursor: pointer;
+.action {
+	margin-top: 3em;
 }
 
-.options-hide {
-	display: none;
+#screen-tags {
+	background-color: #f7ca18;
+	padding: 2em;
 }
 
-.interest-selected {
-	border-bottom: 3px solid #ecd328;
-}
-
-.options-selected {
-	border-bottom: 1.5px solid #ecd328;
-	font-weight: 600;
-}
-
-.career-option {
-	/*text-align: center;*/
-	width: 300px;
-	margin: 0 auto;
-}
-
-/*========BREADCRUMB==========*/
-
-.breadcrumb {
-	max-width: 960px;
-	margin: 0 auto;
-	background-color: #fafafa;
-	text-align: center;
-}
-
-/*========CAREER CHOICES==========*/
-
-.careers form {
-	margin: 0 30px;
-}
-
-.careers form input {
-	margin: 0.5em 1em;
-	padding: 0.5em 1em;
-
-}
-
-.careers p {
-	text-align: center;
-}
-
-.go-button {
-	text-align: center;
-	margin-top: 30px;
-	margin-bottom: -30px;
-}
-
-/*========WORK COMPARISON==========*/
-
-.section-header-bg {
-	background-color: #252222;
-	height: 60px;
-}
-
-h2 {
-	color: #ecd328;
-}
-
-#work-comparison {
-	width: 960px;
-	margin: 0 auto;
-	margin-top: -66px;
-	margin-bottom: 30px;
-}
-
-.option-one {
-	float: left;
-	text-align: center;
-	width: 380px;
-}
-
-.middle-division{
-	float: left;
-	text-align: center;
-	width: 200px;
-}
-
-.option-two {
-	float: right;
-	text-align: center;
-
-	width: 380px;
-}
-
-.filler {
-	height: 75px;
-}
-
-/*========FUTURE COMPARISON==========*/
-
-.future-header {
-	text-align: center;
-}
-
-#future-comparison {
-	width: 960px;
-	margin: 0 auto;
-	margin-top: -66px;
-	margin-bottom: 30px;
-}
-
-.option-one {
-	float: left;
-	text-align: center;
-	width: 380px;
-}
-
-.middle-division{
-	/*float: middle;*/
-	float: left;
-	text-align: center;
-	width: 200px;
-}
-
-.option-two {
-	float: right;
-	text-align: center;
-
-	width: 380px;
+#screen-industry {
+	background-color: #2ecc71;
+	padding: 2em;
 }
 
 /*========FOOTER==========*/
