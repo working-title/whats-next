@@ -2,6 +2,11 @@ body {
 	background-color: #fafafa;
 }
 
+.row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
 /*========CLEARFIX==========*/
 
 .cf:before,
@@ -20,6 +25,7 @@ body {
 }
 
 .navbar-default {
+    max-width: 100%;
 	background-color: #416db4;
 	border-color: transparent;
 }
