@@ -86,10 +86,38 @@
 </div> <!-- ======================= END TAGS ======================= -->
 
 <div id="screen-industry" class="fill-screen"> <!-- ======================= INDUSTRY ======================= -->
-	<div class="row text-center">
+	<div class="row">
 		<div class="container">
-			<p>Here are some industries we think you might like.<p>
-			<p class="lead">Pick one to explore!</p>
+			<p class="text-center">Here are some industries we think you might like.<p>
+			<p class="lead text-center">Pick one to explore!</p>
+
+			<div class="col-xs-12">
+				<div class="col-sm-4 industry-suggestion">
+					<p class="text-center">Performance</p>
+					<p>The Performance Industry includes Actors, Musicians, Dancers and more. If you enjoy being on or behind a stage, this might be an industry for you!</p>
+					<a href="{% url 'pathways:subjects' %}#industry">
+						<button class="btn btn-block btn-explore">
+		                	Explore Careers
+		            	</button>
+		            </a>
+				</div>
+				<div class="col-sm-4 industry-suggestion">
+					<p class="text-center">Broadcasting</p>
+					<p>Broadcasting in an Industry full of Producers, Directors, Technicians, DJs. If you ever thought about being on tv or radio, check out these careers!</p>
+					<button class="btn btn-block btn-explore"
+						data-scrollto="subjects#industry">
+		                Explore Careers
+		            </button>
+				</div>
+				<div class="col-sm-4 industry-suggestion">
+					<p class="text-center">Advertising</p>
+					<p>Advertising is a diverse industry that includes creatives and business people alike! If you’re always thinking of the next big thing, this might be for you!</p>
+					<button class="btn btn-block btn-explore"
+						data-scrollto="subjects#industry">
+		                Explore Careers
+		            </button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div> <!-- ======================= END INDUSTRY ======================= -->

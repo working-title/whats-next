@@ -24,6 +24,14 @@ p {
 	margin: 0 auto;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 /*========CLEARFIX==========*/
 
 .cf:before,
@@ -86,6 +94,7 @@ p {
 /*========BUTTONS==========*/
 
 .btn-start {
+	color: #fff;
 	background-color: #90cd00;
 	padding-top: 0.7em;
 	padding-bottom: 0.7em;
@@ -112,6 +121,20 @@ p {
 .btn-blue:hover {
 	background-color: #2074aa;
 	border-color: #185881;
+	color: #fff;
+}
+
+.btn-explore {
+	color: #fff;
+	background-color: #39a3db;
+	padding-top: 0.7em;
+	padding-bottom: 0.7em;
+	font-size: 22px;
+}
+
+.btn-explore:hover {
+	background-color: #f64747;
+	border-color: #ca2727;
 	color: #fff;
 }
 
