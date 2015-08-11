@@ -10,25 +10,18 @@ body {
 /*========TYPOGRAPHY==========*/
 
 p {
-	font-size: 24px;
+	font-size: 18px;
 }
 
 .lead {
 	margin-bottom: 3em;
+	font-variant: small-caps;
+	font-size: 32px;
 }
 
 .page-container {
 	width: 80%;
 	margin: 0 auto;
-}
-
-/*========TYPOGRAPHY==========*/
-
-.btn-start {
-	background-color: #90cd00;
-	padding-top: 0.7em;
-	padding-bottom: 0.7em;
-	font-size: 22px;
 }
 
 /*========CLEARFIX==========*/
@@ -91,9 +84,29 @@ p {
 }
 
 /*========BUTTONS==========*/
+
+.btn-start {
+	background-color: #90cd00;
+	padding-top: 0.7em;
+	padding-bottom: 0.7em;
+	font-size: 22px;
+}
+
+.btn-start:hover {
+	background-color: #7cb001;
+	border-color: #618a01;
+	color: #fff;
+}
+
 .btn-blue {
+	padding-top: 0.7em;
+	padding-bottom: 0.7em;
+	font-size: 22px;
 	background-color: #39a3db;
 	color: #fff;
+	position: absolute;
+	bottom: -15em;
+	left: 0%;
 }
 
 .btn-blue:hover {
@@ -157,6 +170,7 @@ p {
 #screen-tags {
 	background-color: #f7ca18;
 	padding: 2em;
+	position: relative;
 }
 
 #screen-industry {
