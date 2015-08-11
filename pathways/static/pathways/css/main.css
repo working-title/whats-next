@@ -7,6 +7,16 @@ body {
 	margin-right: 0px !important;
 }
 
+/*========TYPOGRAPHY==========*/
+
+p {
+	font-size: 24px;
+}
+
+.lead {
+	margin-bottom: 3em;
+}
+
 /*========CLEARFIX==========*/
 
 .cf:before,
@@ -94,9 +104,17 @@ body {
 	padding-top: 0.5em;
 }
 
+.top-tip p {
+	font-size: 16px;
+}
+
 .bottom-tip {
 	border-bottom: dashed 2px #fff;
 	padding-top: 15em;
+}
+
+.bottom-tip p {
+	font-size: 16px;
 }
 
 @media (max-width: 767px) {
