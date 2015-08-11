@@ -6,3 +6,8 @@ def index(request):
     categories = Category.objects.all()
     interests = Interest.objects.all()
     return render(request, "pathways/index.html", locals())
+
+def subjects(request):
+    categories = Category.objects.all()
+    interests = Interest.objects.all()
+    return render(request, "pathways/subjects.html", locals())
