@@ -7,7 +7,6 @@ body {
 	margin-right: 0px !important;
 }
 
-<<<<<<< Updated upstream
 /*========TYPOGRAPHY==========*/
 
 p {
@@ -16,11 +15,11 @@ p {
 
 .lead {
 	margin-bottom: 3em;
-=======
+}
+	
 .page-container {
 	width: 80%;
 	margin: 0 auto;
->>>>>>> Stashed changes
 }
 
 /*========CLEARFIX==========*/
@@ -110,13 +109,12 @@ p {
 	padding-top: 0.5em;
 }
 
-<<<<<<< Updated upstream
 .top-tip p {
 	font-size: 16px;
-=======
+}
+	
 .compass {
 	width: 100%;
->>>>>>> Stashed changes
 }
 
 .bottom-tip {

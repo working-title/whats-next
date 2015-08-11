@@ -4,18 +4,55 @@
 {% block content%}
 <header>
 	<script type="text/javascript">
+		var tags = [
+			{
+				value: "computerz",
+				label: "computerz",
+			},
+			{
+				value: "stuff",
+				label: "stuff",
+			},
+			{
+				value: "otherstuff",
+				label: "otherstuff",
+			},
+		];
+		
 		var greyedOutGoPath = "{% static 'pathways/img/grey-go.png' %}"
 		var goPath = "{% static 'pathways/img/go.png' %}"
+
+		$(document).ready(function() {
+			var taggle = new Taggle("taggle", {
+				duplicateTagClass: 'bounce',	
+			});
+
+			var container = taggle.getContainer();
+			var input = taggle.getInput();
+
+			$(input).autocomplete({
+				source: tags,
+				appendTo: container,
+				position: { at: "left bottom", of: container },
+				select: function(event, data) {
+					event.preventDefault();
+					//Add the tag if user clicks
+					if (event.which === 1) {
+						example4.add(data.item.value);
+					}
+				}
+			});
+		});
 	</script>
 </header>
 
 <!-- ======================= NAV ======================= -->
 <nav class="navbar navbar-default" role="navigation">
-<!-- Brand and toggle get grouped for better mobile display -->
+	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<div class="container">
-	      <a class="navbar-brand" href="./?page=dash">what's next <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
-	    </div>
+			<a class="navbar-brand" href="./?page=dash">what's next <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+		</div>
 	</div>
 </nav> <!-- ======================= END NAV ======================= -->
 
@@ -48,8 +85,8 @@
 			<div class="col-sm-offset-4 col-sm-4 col-lg-offset-9 col-lg-3">
 				<button class="btn btn-block btn-success"
 						data-scrollto="#screen-tags">
-	                Start Looking
-	            </button>
+					Start Looking
+				</button>
 			</div>
 		</div>
 	</div>
@@ -67,8 +104,8 @@
 	<div class="row">
 		<div class="container">
 			<div class="col-sm-offset-3 col-sm-6">
-				<input id="taggle" class="form-control input-lg" name="taggle"
-                  placeholder="eg: writing, photography, film">
+				<div id="taggle" class="form-control input-lg" name="taggle"
+					 placeholder="eg: writing, photography, film"></div>
 			</div>
 		</div>
 	</div>
@@ -79,8 +116,8 @@
 			<div class="col-sm-4">
 				<button class="btn btn-block btn-blue"
 						data-scrollto="#screen-industry">
-	                Next Step
-	            </button>
+					Next Step
+				</button>
 			</div>
 		</div>
 	</div>
