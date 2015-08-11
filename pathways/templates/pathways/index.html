@@ -21,20 +21,20 @@
 
 <div id="screen-one" class="fill-screen"> <!-- ======================= ABOVE FOLD ======================= -->
 	<div class="row text-center">
-		<div class="container">
+		<div class="container clearfix">
 			<p>Not sure what to do after high school? Can’t pick a career?</p>
 			<p class="lead">Use <strong>what’s next</strong> to explore your options!</p>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="container">
-			<div class="col-sm-4 top-tip">
+		<div class="page-container">
+			<div class="col-sm-4 col-lg-3 top-tip">
 				<p>Choose your interests and get career field suggestions based on the tags you generate!</p>
 			</div>
 
-			<div class="col-sm-4 text-center">
-				<img class="img-responsive" src="{% static 'pathways/img/compass.png' %}" alt="Compass">
+			<div class="col-sm-4 col-lg-6 text-center">
+				<img class="img-responsive compass" src="{% static 'pathways/img/compass.png' %}" alt="Compass">
 			</div>
 
 			<div class="col-sm-4 text-right bottom-tip">
@@ -44,8 +44,8 @@
 	</div>
 
 	<div class="row action">
-		<div class="container">
-			<div class="col-sm-offset-4 col-sm-4">
+		<div class="page-container clearfix">
+			<div class="col-sm-offset-4 col-sm-4 col-lg-offset-9 col-lg-3">
 				<button class="btn btn-block btn-success"
 						data-scrollto="#screen-tags">
 	                Start Looking
@@ -58,7 +58,7 @@
 
 <div id="screen-tags" class="fill-screen"> <!-- ======================= TAGS ======================= -->
 	<div class="row text-center">
-		<div class="container">
+		<div class="page-container clearfix">
 			<p>Tell us a bit more about your interests (max of 5).</p>
 			<p class="lead">Start typing below!</p>
 		</div>
