@@ -7,7 +7,6 @@ body {
 	margin-right: 0px !important;
 }
 
-<<<<<<< Updated upstream
 /*========TYPOGRAPHY==========*/
 
 p {
@@ -16,11 +15,11 @@ p {
 
 .lead {
 	margin-bottom: 3em;
-=======
+}
+
 .page-container {
 	width: 80%;
 	margin: 0 auto;
->>>>>>> Stashed changes
 }
 
 /*========CLEARFIX==========*/
@@ -110,27 +109,32 @@ p {
 	padding-top: 0.5em;
 }
 
-<<<<<<< Updated upstream
 .top-tip p {
 	font-size: 16px;
-=======
+}
+
 .compass {
 	width: 100%;
->>>>>>> Stashed changes
 }
 
 .bottom-tip {
 	border-bottom: dashed 2px #fff;
-	padding-top: 15em;
+	padding-top: 27em;
 }
 
 .bottom-tip p {
 	font-size: 16px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 	.bottom-tip {
 		padding-top: 2em;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+	.bottom-tip {
+		padding-top: 10em;
 	}
 }
 
