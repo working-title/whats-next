@@ -6,6 +6,12 @@ $(window).resize(setHeightPageSections);
 // this height
 function setHeightPageSections() {
 	var height = $(window).height();
+
+	console.log(height);
+	if (height < 700) {
+		height = 700;
+	}
+
 	var pageSections = document.getElementsByClassName("fill-screen");
 	
 	for (var i = 0; i < pageSections.length; i++) {
