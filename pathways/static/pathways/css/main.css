@@ -132,6 +132,7 @@ a:hover {
 	padding-bottom: 0.7em;
 	font-size: 22px;
 	background-color: #39a3db;
+	border-color: #39a3db;
 	color: #fff;
 	position: absolute;
 	bottom: -15em;
@@ -191,25 +192,28 @@ a:hover {
 
 
 .top-tip {
+	margin-top: 1em;
 	border-top: dashed 2px #fff;
 	padding-top: 0.5em;
 }
 
 .top-tip p {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .compass {
-	width: 100%;
+	width: 90%;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 .bottom-tip {
 	border-bottom: dashed 2px #fff;
-	padding-top: 17em;
+	padding-top: 18em;
 }
 
 .bottom-tip p {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 @media (max-width: 768px) {
