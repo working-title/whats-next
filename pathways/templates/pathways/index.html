@@ -25,7 +25,8 @@
 		$(document).ready(function() {
 			var taggle = new Taggle("taggle", {
 				placeholder: "Enter your interests",
-				duplicateTagClass: 'bounce',	
+				duplicateTagClass: 'bounce',
+				allowedTags: ["computerz", "stuff", "otherstuff"],
 			});
 
 			var container = taggle.getContainer();
