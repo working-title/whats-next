@@ -45,32 +45,6 @@ p a:hover {
   transition: all 0.25s;
 }
 
-/* line 39, ../../../sass/projects/taggle/taggle.scss */
-.btn {
-  background: #990033;
-  padding: 12px 30px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin-right: 10px;
-  color: white !important;
-  position: relative;
-  display: inline-block;
-  width: 130px;
-}
-/* line 49, ../../../sass/projects/taggle/taggle.scss */
-.btn:hover {
-  background: #cc0044;
-}
-/* line 53, ../../../sass/projects/taggle/taggle.scss */
-.btn:active {
-  top: 1px;
-}
-/* line 57, ../../../sass/projects/taggle/taggle.scss */
-.btn:last-child {
-  margin-right: 0;
-}
-
 /* line 62, ../../../sass/projects/taggle/taggle.scss */
 ::selection {
   background: #990033;
