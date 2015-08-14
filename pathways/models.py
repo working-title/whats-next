@@ -30,6 +30,7 @@ class Career(models.Model):
 
 class Industry(models.Model):
     name = models.CharField(max_length=256)
+    description = models.TextField()
     careers = models.ManyToManyField(Career)
     tags = TaggableManager()
 
