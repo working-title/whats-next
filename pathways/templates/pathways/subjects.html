@@ -3,31 +3,100 @@
 
 {% block content%}
 
-<div class="row">
-	<div class="container text-center">
+<!-- ======================= NAV ======================= -->
+<nav class="navbar navbar-default" role="navigation">
+<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<div class="container">
+	      <a class="col-sm-offset-1 col-sm-4 logo" href="{% url 'pathways:index' %}">what's next <img class="img-responsive" src="{% static 'pathways/img/compass-outline.svg' %}" alt="Compass"></a>
+	    </div>
+	</div>
+</nav> <!-- ======================= END NAV ======================= -->
 
-		<div id="industry">
+<div id="industry" class="fill-screen">
+	<div class="row text-center">
+		<div class="page-container clearfix hook">
 			<p>Now that you've chosen an industry</p>
 			<p class="lead">Pick 2 careers to compare!</p>
+		</div> <!-- /.container -->
+	</div> <!-- /.row -->
 
-			<hr>
+	<div class="row">
+		<div class="page-container">
+			<div class="col-sm-offset-3 col-sm-6">
+				<button class="btn btn-block btn-field">
+	                Broadcasting
+	            </button>
+			</div>
+		</div> <!-- /.page-container -->
+	</div> <!-- /.row -->
+
+	<div class="row">
+		<div class="page-container">
+			<div class="col-sm-12 text-center">
+				<button class="btn btn-career">
+	                Journalist
+	            </button>
+	            <button class="btn btn-career">
+	                Radio DJ
+	            </button>
+	            <button class="btn btn-career">
+	                Writer
+	            </button>
+	            <button class="btn btn-career">
+	                Manager
+	            </button>
+	            <button class="btn btn-career">
+	                Camera Op
+	            </button>
+			</div>
+
+			<div class="col-sm-12 text-center">
+				<button class="btn btn-career">
+	                Publicist
+	            </button>
+	            <button class="btn btn-career">
+	                Editor
+	            </button>
+	            <button class="btn btn-career">
+	                Sound Tech
+	            </button>
+	            <button class="btn btn-career">
+	                TV Anchor
+	            </button>
+	            <button class="btn btn-career">
+	                Director
+	            </button>
+			</div>
+		</div> <!-- /.page-container -->
+	</div> <!-- /.row -->
+
+	<div class="row action">
+		<div class="page-container">
+			<div class="col-sm-offset-3 col-sm-6">
+				<button class="btn btn-block btn-compare"
+						data-scrollto="#work-life">
+	                Compare Now
+	            </button>
+			</div>
 		</div>
+	</div> <!-- /.row-action -->
+</div> <!-- /.industry -->
 
-		<div id="work-life">
-			<p>annual salary</p>
-			<p>hours per week</p>
-			<p>employment rate</p>
+<div id="work-life" class="fill-screen">
+	<div class="row text-center">
+		<p>annual salary</p>
+		<p>hours per week</p>
+		<p>employment rate</p>
+	</div> <!-- /.row -->
+</div> <!-- /.work-life -->
 
-			<hr>
-		</div>
-
-		<div id="getting-there">
-			<p>minimum qualification</p>
-			<p>student debt</p>
-		</div>
-
-	</div> <!-- /.container -->
-</div> <!-- /.row -->
+<div id="getting-there" class="fill-screen">
+	<div class="row text-center">
+		<p>minimum qualification</p>
+		<p>student debt</p>
+	</div> <!-- /.row -->
+</div> <!-- /.getting-there -->
 
 
 {% endblock %}
