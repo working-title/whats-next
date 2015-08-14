@@ -11,17 +11,6 @@ class Qualification(models.Model):
         return self.name
 
 
-class Industry(models.Model):
-    name = models.CharField(max_length=256)
-    tags = TaggableManager()
-
-    class Meta:
-        verbose_name_plural = "industries"
-
-    def __unicode__(self):
-        return self.name
-
-
 class Career(models.Model):
     name = models.CharField(max_length=256)
     income = models.PositiveIntegerField()
@@ -36,6 +25,18 @@ class Career(models.Model):
     degree = models.PositiveIntegerField(default=0)
 
     def __unicode__(self):              # __unicode__ on Python 2
+        return self.name
+
+
+class Industry(models.Model):
+    name = models.CharField(max_length=256)
+    careers = models.ManyToManyField(Career)
+    tags = TaggableManager()
+
+    class Meta:
+        verbose_name_plural = "industries"
+
+    def __unicode__(self):
         return self.name
 
 
