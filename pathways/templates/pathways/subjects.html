@@ -11,8 +11,10 @@
 	      <a class="col-sm-offset-1 col-sm-4 logo" href="{% url 'pathways:index' %}">what's next <img class="img-responsive" src="{% static 'pathways/img/compass-outline.svg' %}" alt="Compass"></a>
 	    </div>
 	</div>
-</nav> <!-- ======================= END NAV ======================= -->
+</nav> <!-- /.nav -->
 
+
+<!-- ======================= INDUSTRY ======================= -->
 <div id="industry" class="fill-screen">
 	<div class="row text-center">
 		<div class="page-container clearfix hook">
@@ -83,20 +85,70 @@
 	</div> <!-- /.row-action -->
 </div> <!-- /.industry -->
 
+
+<!-- ======================= WORK LIFE ======================= -->
 <div id="work-life" class="fill-screen">
+	<nav class="navbar navbar-default" role="navigation"> <!-- nav -->
+	<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<div class="container">
+				<div class="col-sm-6 career-heading text-center">
+		            radio dj
+				</div>
+				<div class="col-sm-6 career-heading text-center">
+	            	sound tech
+				</div>
+		    </div>
+		</div>
+	</nav> <!-- /.nav -->
+
 	<div class="row text-center">
-		<p>annual salary</p>
-		<p>hours per week</p>
-		<p>employment rate</p>
+		<p class="category">annual salary</p>
+		<p class="category">hours per week</p>
+		<p class="category">employment rate</p>
 	</div> <!-- /.row -->
+
 </div> <!-- /.work-life -->
 
+
+<!-- ======================= GETTING THERE ======================= -->
 <div id="getting-there" class="fill-screen">
+	<nav class="navbar navbar-default" role="navigation"> <!-- nav -->
+	<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<div class="container">
+				<div class="col-sm-6 career-heading text-center">
+		            radio dj
+				</div>
+				<div class="col-sm-6 career-heading text-center">
+	            	sound tech
+				</div>
+		    </div>
+		</div>
+	</nav> <!-- /.nav -->
+
 	<div class="row text-center">
-		<p>minimum qualification</p>
-		<p>student debt</p>
+		<p class="category">minimum qualification</p>
+		<p class="category">student debt</p>
 	</div> <!-- /.row -->
+
+	<div class="row action">
+		<div class="page-container clearfix">
+			<div class="col-sm-offset-3 col-sm-6">
+				<button class="btn btn-block btn-back">
+	                Back to Industries
+	            </button>
+			</div>
+		</div>
+	</div> <!-- /.row action -->
 </div> <!-- /.getting-there -->
 
+<footer>
+	<div class="row text-center">
+		<div class="container">
+			<p>Brought to you by team <strong class="footer-title">Working Title</strong> as part of <strong class="footer-title">GovHack 2015 Wellington</strong>, New Zealand.</p>
+		</div>
+	</div>
+</footer>
 
 {% endblock %}
