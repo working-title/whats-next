@@ -214,6 +214,7 @@ a:focus.logo  {
 	width: 90%;
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
+	font-size: 16px;
 }
 
 .bottom-tip {
@@ -433,6 +434,150 @@ a:focus.logo  {
  	font-size: 16px;
  }
 
- footer img {
- 	margin-right: 25px;
- }
+/*========TAGGLE==========*/
+.ui-widget-content {
+    background: white;
+    color: #333;
+	padding-top: 16px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+li.taggle {
+	margin-top: 10px;
+}
+
+::selection {
+    background: #ccc;
+    color: #333;
+}
+
+.ui-autocomplete {
+	width: 100% !important;
+}
+
+ /* line 245, ../../../sass/projects/taggle/taggle.scss */
+.taggle_list {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+/* line 250, ../../../sass/projects/taggle/taggle.scss */
+.taggle_input {
+  border: none;
+  outline: none;
+  font-weight: 300;
+}
+
+/* line 257, ../../../sass/projects/taggle/taggle.scss */
+.taggle_list li {
+  float: left;
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* line 265, ../../../sass/projects/taggle/taggle.scss */
+.taggle_list .taggle {
+  margin-right: 8px;
+  background: #E2E1DF;
+  padding: 5px 10px;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* line 283, ../../../sass/projects/taggle/taggle.scss */
+.taggle_list .taggle_hot {
+  background: #cac8c4;
+}
+
+/* line 287, ../../../sass/projects/taggle/taggle.scss */
+.taggle_list .taggle .close {
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  text-decoration: none;
+  padding-left: 2px;
+  padding-top: 3px;
+  line-height: 75%;
+  color: #ccc;
+  color: rgba(0, 0, 0, 0.2);
+  padding-bottom: 4px;
+  display: none;
+}
+
+/* line 302, ../../../sass/projects/taggle/taggle.scss */
+.taggle_list .taggle:hover {
+  padding: 5px;
+  padding-right: 15px;
+  background: #ccc;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 309, ../../../sass/projects/taggle/taggle.scss */
+.taggle_list .taggle:hover > .close {
+  display: block;
+}
+
+/* line 313, ../../../sass/projects/taggle/taggle.scss */
+.taggle_list .taggle .close:hover {
+  color: #990033;
+}
+
+/* line 317, ../../../sass/projects/taggle/taggle.scss */
+.taggle_placeholder {
+  position: absolute;
+  top: 18px;
+  color: #CCC;
+  font-size: 18px;
+  -webkit-transition: opacity, 0.25s;
+  -moz-transition: opacity, 0.25s;
+  -o-transition: opacity, 0.25s;
+  transition: opacity, 0.25s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* line 328, ../../../sass/projects/taggle/taggle.scss */
+.taggle_input {
+  padding: 8px;
+  padding-top: 16px;
+  padding-left: 0;
+  float: left;
+  margin-top: -5px;
+  background: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* line 338, ../../../sass/projects/taggle/taggle.scss */
+.taggle_sizer {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: -500px;
+  z-index: -1;
+  visibility: hidden;
+}
+
