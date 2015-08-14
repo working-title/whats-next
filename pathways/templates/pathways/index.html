@@ -44,6 +44,13 @@
 
 		$(document).ready(function() {
 			var taggle = new Taggle("taggle", {
+				onTagAdd: function(event, tag) {
+					var tags = taggle.getTags().values;
+					
+					if (tags.length > 5) {
+						taggle.remove(tag);	
+					}
+				},
 				placeholder: "Enter your interests",
 				duplicateTagClass: 'bounce',
 				allowedTags: ["computers", "tech", "electronics", "media", "digital", "web", "stuff", "otherstuff"],
