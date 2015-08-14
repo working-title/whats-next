@@ -214,6 +214,7 @@ a:focus.logo  {
 	width: 90%;
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
+	font-size: 16px;
 }
 
 .bottom-tip {
@@ -431,8 +432,4 @@ a:focus.logo  {
  	text-transform: uppercase;
  	font-weight: 600;
  	font-size: 16px;
- }
-
- footer img {
- 	margin-right: 25px;
  }

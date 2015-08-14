@@ -4,14 +4,53 @@
 {% block content%}
 <header>
 	<script type="text/javascript">
+		var tags = [
+			{
+				value: "computerz",
+				label: "computerz",
+			},
+			{
+				value: "stuff",
+				label: "stuff",
+			},
+			{
+				value: "otherstuff",
+				label: "otherstuff",
+			},
+		];
+		
 		var greyedOutGoPath = "{% static 'pathways/img/grey-go.png' %}"
 		var goPath = "{% static 'pathways/img/go.png' %}"
+
+		$(document).ready(function() {
+			var taggle = new Taggle("taggle", {
+				placeholder: "Enter your interests",
+				duplicateTagClass: 'bounce',
+				allowedTags: ["computerz", "stuff", "otherstuff"],
+			});
+
+			var container = taggle.getContainer();
+			var input = taggle.getInput();
+
+			$(input).autocomplete({
+				source: tags,
+				appendTo: container,
+				position: { at: "left bottom", of: container },
+				select: function(event, data) {
+					event.preventDefault();
+					//Add the tag if user clicks
+					if (event.which === 1) {
+						example4.add(data.item.value);
+					}
+				}
+			});
+		});
 	</script>
 </header>
 
 <!-- ======================= NAV ======================= -->
 <nav class="navbar navbar-default" role="navigation">
-<!-- Brand and toggle get grouped for better mobile display -->
+	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<div class="container">
 	      <a class="col-sm-offset-1 col-sm-4 logo" href="{% url 'pathways:index' %}">what's next <img class="img-responsive" src="{% static 'pathways/img/compass-outline.svg' %}" alt="Compass"></a>
@@ -48,8 +87,8 @@
 			<div class="col-sm-offset-3 col-sm-6">
 				<button class="btn btn-block btn-start"
 						data-scrollto="#screen-tags">
-	                Start Looking
-	            </button>
+					Start Looking
+				</button>
 			</div>
 		</div>
 	</div> <!-- /.row action -->
@@ -67,8 +106,8 @@
 	<div class="row">
 		<div class="page-container">
 			<div class="col-sm-offset-3 col-sm-6">
-				<input id="taggle" class="form-control input-lg" name="taggle"
-                  placeholder="eg: writing, photography, film">
+				<div id="taggle" class="input textarea" name="taggle"
+					 placeholder="eg: writing, photography, film"></div>
 			</div>
 		</div>
 	</div>
@@ -78,8 +117,8 @@
 			<div class="col-sm-offset-3 col-sm-6">
 				<button class="btn btn-block btn-blue"
 						data-scrollto="#screen-industry">
-	                Next Step
-	            </button>
+					Next Step
+				</button>
 			</div>
 		</div>
 	</div>
@@ -144,7 +183,7 @@
 <footer>
 	<div class="row text-center">
 		<div class="container">
-			<p>Brought to you by team <strong>Working Title</strong> as part of GovHack 2015 Wellington, New Zealand.</p>
+			<p>Brought to you by team <strong class="footer-title">Working Title</strong> as part of <strong strong class="footer-title">GovHack 2015 Wellington</strong>, New Zealand.</p>
 		</div>
 	</div>
 </footer>
