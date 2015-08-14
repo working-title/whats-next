@@ -10,12 +10,17 @@ class Qualification(models.Model):
     def __unicode__(self):              # __unicode__ on Python 2
         return self.name
 
+
 class Industry(models.Model):
     name = models.CharField(max_length=256)
     tags = TaggableManager()
 
+    class Meta:
+        verbose_name_plural = "industries"
+
     def __unicode__(self):
         return self.name
+
 
 class Career(models.Model):
     name = models.CharField(max_length=256)
@@ -42,9 +47,13 @@ class Interest(models.Model):
     def __unicode__(self):              # __unicode__ on Python 2
         return self.name
 
+
 class Category(models.Model):
     name = models.CharField(max_length=256)
     interests = models.ManyToManyField(Interest)
+
+    class Meta:
+        verbose_name_plural = "categories"
 
     def __unicode__(self):              # __unicode__ on Python 2
         return self.name
