@@ -14,57 +14,58 @@
 <!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<div class="container">
-	      <a class="navbar-brand" href="./?page=dash">what's next <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+	      <a class="col-sm-offset-1 col-sm-4 logo" href="{% url 'pathways:index' %}">what's next <img class="img-responsive" src="{% static 'pathways/img/compass-outline.svg' %}" alt="Compass"></a>
 	    </div>
 	</div>
-</nav> <!-- ======================= END NAV ======================= -->
+</nav> <!-- /.nav -->
 
-<div id="screen-one"> <!-- ======================= ABOVE FOLD ======================= -->
+<div id="screen-one" class="fill-screen"> <!-- ======================= ABOVE FOLD ======================= -->
 	<div class="row text-center">
-		<div class="container">
+		<div class="container clearfix">
 			<p>Not sure what to do after high school? Can’t pick a career?</p>
 			<p class="lead">Use <strong>what’s next</strong> to explore your options!</p>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="container">
-			<div class="col-sm-4 top-tip">
+		<div class="page-container">
+			<div class="col-sm-4 col-lg-4 top-tip">
 				<p>Choose your interests and get career field suggestions based on the tags you generate!</p>
 			</div>
 
-			<div class="col-sm-4 text-center">
-				<img class="img-responsive" src="{% static 'pathways/img/compass.png' %}" alt="Compass">
+			<div class="col-sm-4 col-lg-4 text-center">
+				<img class="img-responsive compass" src="{% static 'pathways/img/compass.svg' %}" alt="Compass">
 			</div>
 
-			<div class="col-sm-4 text-right bottom-tip">
+			<div class="col-sm-4 col-lg-4 text-right bottom-tip">
 				<p>Compare careers side by side for salary, hiring rates, student debt and more!</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="row action">
-		<div class="container">
-			<div class="col-sm-offset-4 col-sm-4">
-				<button class="btn btn-block btn-success">
+		<div class="page-container clearfix">
+			<div class="col-sm-offset-3 col-sm-6">
+				<button class="btn btn-block btn-start"
+						data-scrollto="#screen-tags">
 	                Start Looking
 	            </button>
 			</div>
 		</div>
-	</div>
-</div> <!-- ======================= END ABOVE FOLD ======================= -->
+	</div> <!-- /.row action -->
+</div> <!-- /#screen-one -->
 
 
-<div id="screen-tags"> <!-- ======================= TAGS ======================= -->
+<div id="screen-tags" class="fill-screen"> <!-- ======================= TAGS ======================= -->
 	<div class="row text-center">
-		<div class="container">
+		<div class="page-container clearfix">
 			<p>Tell us a bit more about your interests (max of 5).</p>
 			<p class="lead">Start typing below!</p>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="container">
+		<div class="page-container">
 			<div class="col-sm-offset-3 col-sm-6">
 				<input id="taggle" class="form-control input-lg" name="taggle"
                   placeholder="eg: writing, photography, film">
@@ -73,25 +74,72 @@
 	</div>
 
 	<div class="row action">
-		<div class="container">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
-				<button class="btn btn-block btn-blue">
+		<div class="page-container">
+			<div class="col-sm-offset-3 col-sm-6">
+				<button class="btn btn-block btn-blue"
+						data-scrollto="#screen-industry">
 	                Next Step
 	            </button>
 			</div>
 		</div>
 	</div>
-</div> <!-- ======================= END TAGS ======================= -->
+</div> <!-- /#screen-tags -->
 
-<div id="screen-industry"> <!-- ======================= INDUSTRY ======================= -->
-	<div class="row text-center">
+<div id="screen-industry" class="fill-screen"> <!-- ======================= INDUSTRY ======================= -->
+	<div class="row">
 		<div class="container">
-			<p>Here are some industries we think you might like.<p>
-			<p class="lead">Pick one to explore!</p>
-		</div>
-	</div>
-</div> <!-- ======================= END INDUSTRY ======================= -->
+			<p class="text-center">Here are some industries we think you might like.<p>
+			<p class="lead text-center">Pick one to explore!</p>
+
+			<div class="col-xs-12">
+
+				<div class="col-sm-4 industry-container">
+				  <div class="industry-suggestion">
+					<div class="text-center industry-title">Performance</div>
+					<div class="industry-content">The Performance Industry includes Actors, Musicians, Dancers and more. If you enjoy being on or behind a stage, this might be an industry for you!</div>
+					<div class="button-container">
+						<a href="{% url 'pathways:subjects' %}#industry">
+							<button class="btn btn-block btn-explore">
+			                	Explore Careers
+			            	</button>
+			            </a>
+			        </div> <!-- /.button-container -->
+		          </div> <!-- /.industry-container -->
+				</div> <!-- /.industry-suggestion -->
+
+				<div class="col-sm-4 industry-container">
+				  <div class="industry-suggestion">
+					<div class="text-center industry-title">Broadcasting</div>
+					<div class="industry-content">Broadcasting in an Industry full of Producers, Directors, Technicians, DJs. If you ever thought about being on tv or radio, check out these careers!</div>
+					<div class="button-container">
+						<a href="{% url 'pathways:subjects' %}#industry">
+							<button class="btn btn-block btn-explore">
+			                	Explore Careers
+			            	</button>
+			            </a>
+			        </div> <!-- /.button-container -->
+		          </div> <!-- /.industry-container -->
+				</div> <!-- /.industry-suggestion -->
+
+				<div class="col-sm-4 industry-container">
+				  <div class="industry-suggestion">
+					<div class="text-center industry-title">Advertising</div>
+					<div class="industry-content">Advertising is a diverse industry that includes creatives and business people alike! If you’re always thinking of the next big thing, this might be for you!</div>
+					<div class="button-container">
+						<a href="{% url 'pathways:subjects' %}#industry">
+							<button class="btn btn-block btn-explore">
+			                	Explore Careers
+			            	</button>
+			            </a>
+			        </div> <!-- /.button-container -->
+		          </div> <!-- /.industry-container -->
+				</div> <!-- /.industry-suggestion -->
+
+			</div> <!-- /.col-sm-12 -->
+
+		</div> <!-- /.container -->
+	</div> <!-- /.row -->
+</div> <!-- /#industry -->
 
 <footer>
 	<div class="row text-center">

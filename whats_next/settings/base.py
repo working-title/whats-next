@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'pathways',
     'django_extensions',
     'rest_framework',
+    'taggit',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -116,3 +117,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# Taggit
+TAGGIT_CASE_INSENSITIVE = True
