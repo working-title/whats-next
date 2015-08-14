@@ -4,41 +4,15 @@
 {% block content%}
 <header>
 	<script type="text/javascript">
-		var tags = [
-			{
-				value: "computers",
-				label: "computers",
-			},
-			{
-				value: "tech",
-				label: "tech",
-			},
-			{
-				value: "electronics",
-				label: "electronics",
-			},
-			{
-				value: "media",
-				label: "media",
-			},
-			{
-				value: "digital",
-				label: "digital",
-			},
-			{
-				value: "web",
-				label: "web",
-			},
-			{
-				value: "stuff",
-				label: "stuff",
-			},
-			{
-				value: "otherstuff",
-				label: "otherstuff",
-			},
-		];
-		
+            var tags = [
+                {% for tag in tags %}
+                    {
+                        value: "{{ tag.name }}",
+                        label: "{{ tag.name }}"
+                    },
+                {% endfor %}
+            ];
+
 		var greyedOutGoPath = "{% static 'pathways/img/grey-go.png' %}"
 		var goPath = "{% static 'pathways/img/go.png' %}"
 
@@ -53,7 +27,7 @@
 				},
 				placeholder: "Enter your interests",
 				duplicateTagClass: 'bounce',
-				allowedTags: ["computers", "tech", "electronics", "media", "digital", "web", "stuff", "otherstuff"],
+				allowedTags: [{% for tag in tags %}"{{ tag.name }}",{% endfor %}]
 			});
 
 			var container = taggle.getContainer();
