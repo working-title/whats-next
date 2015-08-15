@@ -48,13 +48,8 @@
 				onTagAdd: function(event, tag) {
 					var tags = taggle.getTags().values;
 					$(".btn-blue").css("bottom", "-7.95em");
-//					if (tags.length > 3) {
-//						$(".btn-blue").css("bottom", "-5em");
-//					} else {
-//						
-//					}
 					
-					if (tags.length > 5) {
+					if (tags.length > 3) {
 						taggle.remove(tag);	
 					}
 				},
@@ -148,7 +143,7 @@
 <div id="screen-tags" class="fill-screen"> <!-- ======================= TAGS ======================= -->
 	<div class="row text-center">
 		<div class="page-container clearfix">
-			<p>Tell us a bit more about your interests (max of 5).</p>
+			<p>Tell us a bit more about your interests (max of 3).</p>
 			<p class="lead">Start typing below!</p>
 		</div>
 	</div>
