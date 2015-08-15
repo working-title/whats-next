@@ -371,6 +371,27 @@ a:focus.logo  {
 	color: #fff;
 }
 
+/*========BARGRAPHS=========*/
+.parallel-charts {
+	width: 700px;
+	height: 150px;
+	margin: auto;
+}
+
+.barchartcareer1{
+	width: 50%;
+	height: 170px;
+	float: left;
+	margin: auto;
+}
+
+.barchartcareer2{
+	width: 50%;
+	height: 170px;
+	float: right;
+	margin: auto
+}
+
 /*==========================*/
 #work-life {
 	background-color:#f5d000;
@@ -580,4 +601,3 @@ li.taggle {
   z-index: -1;
   visibility: hidden;
 }
-
