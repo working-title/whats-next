@@ -51,13 +51,21 @@
 						taggle.remove(tag);	
 					}
 				},
-				placeholder: "Enter your interests",
+				placeholder: "",
 				duplicateTagClass: 'bounce',
 				allowedTags: ["computers", "tech", "electronics", "media", "digital", "web", "stuff", "otherstuff"],
 			});
 
-			var container = taggle.getContainer();
-			var input = taggle.getInput();
+			var taggleInput = new Taggle("taggle-input", {
+				onTagAdd: function(event, tag) {
+					taggleInput.remove(tag);
+					taggle.add(tag);
+				},
+				placeholder: "eg: writing, photography, film",
+			});
+			
+			var container = taggleInput.getContainer();
+			var input = taggleInput.getInput();
 
 			$(input).autocomplete({
 				source: tags,
@@ -133,8 +141,10 @@
 	<div class="row">
 		<div class="page-container">
 			<div class="col-sm-offset-3 col-sm-6">
-				<div id="taggle" class="input textarea" name="taggle"
+				<div id="taggle-input" class="input textarea" name="taggle"
 					 placeholder="eg: writing, photography, film"></div>
+				
+				<div id="taggle" class="input textarea"></div>
 			</div>
 		</div>
 	</div>
