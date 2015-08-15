@@ -27,7 +27,7 @@
 		<div class="page-container">
 			<div class="col-sm-offset-3 col-sm-6">
 				<button class="btn btn-block btn-field">
-	                Broadcasting
+	                {{ industry.name }}
 	            </button>
 			</div>
 		</div> <!-- /.page-container -->
@@ -35,41 +35,32 @@
 
 	<div class="row">
 		<div class="page-container">
-			<div class="col-sm-12 text-center">
-				<button class="btn btn-career">
-	                Journalist
-	            </button>
-	            <button class="btn btn-career">
-	                Radio DJ
-	            </button>
-	            <button class="btn btn-career">
-	                Writer
-	            </button>
-	            <button class="btn btn-career">
-	                Manager
-	            </button>
-	            <button class="btn btn-career">
-	                Camera Op
-	            </button>
+
+            <div class="col-sm-12 text-center">
+                {% for career in industry.careers.all %}
+                    <button class="btn btn-career">
+                        {{ career.name }}
+	                </button>
+                {% endfor %}
 			</div>
 
-			<div class="col-sm-12 text-center">
-				<button class="btn btn-career">
-	                Publicist
-	            </button>
-	            <button class="btn btn-career">
-	                Editor
-	            </button>
-	            <button class="btn btn-career">
-	                Sound Tech
-	            </button>
-	            <button class="btn btn-career">
-	                TV Anchor
-	            </button>
-	            <button class="btn btn-career">
-	                Director
-	            </button>
-			</div>
+{#			<div class="col-sm-12 text-center">#}
+{#				<button class="btn btn-career">#}
+{#	                Publicist#}
+{#	            </button>#}
+{#	            <button class="btn btn-career">#}
+{#	                Editor#}
+{#	            </button>#}
+{#	            <button class="btn btn-career">#}
+{#	                Sound Tech#}
+{#	            </button>#}
+{#	            <button class="btn btn-career">#}
+{#	                TV Anchor#}
+{#	            </button>#}
+{#	            <button class="btn btn-career">#}
+{#	                Director#}
+{#	            </button>#}
+{#			</div>#}
 		</div> <!-- /.page-container -->
 	</div> <!-- /.row -->
 
@@ -135,7 +126,7 @@
 	<div class="row action">
 		<div class="page-container clearfix">
 			<div class="col-sm-offset-3 col-sm-6">
-				<a href="{% url 'pathways:index' %}#screen-industry">
+				<a href="{% url 'pathways:index'  %}#screen-industry">
 					<button class="btn btn-block btn-back">
 		                Back to Industries
 		            </button>
