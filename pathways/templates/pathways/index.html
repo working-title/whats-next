@@ -43,6 +43,7 @@
 		var goPath = "{% static 'pathways/img/go.png' %}"
 
 		$(document).ready(function() {
+			// Setup the taggle box for containing the tags
 			var taggle = new Taggle("taggle", {
 				onTagAdd: function(event, tag) {
 					var tags = taggle.getTags().values;
@@ -62,6 +63,7 @@
 				allowedTags: ["computers", "tech", "electronics", "media", "digital", "web", "stuff", "otherstuff"],
 			});
 
+			// Setup the taggle box for getting input from the user
 			var taggleInput = new Taggle("taggle-input", {
 				onTagAdd: function(event, tag) {
 					var tags = taggle.getTags().values;
@@ -72,8 +74,11 @@
 				placeholder: "eg: writing, photography, film",
 			});
 
+			// Remove the text input from the taggle box that dosnt
+			// need it
 			console.log($("#taggle .taggle_input").remove());
 
+			// Setup the auto complete for the taggle input box
 			var container = taggleInput.getContainer();
 			var input = taggleInput.getInput();
 
