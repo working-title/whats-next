@@ -1,7 +1,7 @@
 var blueHex = '#446cb3';
 var redHex = '#f64747';
-var redHexArray = ['#96281B' , '#EF4836' , '#f64747'];
-var blueHexArray = ['#446cb3' , '#3A539B' , '#4183D7'];
+var redHexArray = ['#96281B' ,  '#EF4836' , '#f64747','#E74C3C',];
+var blueHexArray = ['#446cb3' , '#3A539B' , '#4183D7','#52B3D9'];
 
 function drawSalaryBar(canvas, salary){
   var salaryBar = generateSingleBarGraph(canvas, 'salary', salary, 100000, redHex);
@@ -73,7 +73,7 @@ function generateSingleBarGraph(canvas, label, value, maxValue, color){
         title: function (d) { return ''},
         name: function (name, ratio, id, index) { return ''; },
         value: function (value, ratio, id) {
-          var format = d3.format('$');
+          var format = (id === 'salary' || id === 'debt') ? d3.format('$') : d3.format(',');
           return format(value);
         }
       }
@@ -108,10 +108,9 @@ function generateStackedBarGraph(canvas, data, groups, colors){
     tooltip: {
       format: {
         title: function (d) { return ''},
-        name: function (name, ratio, id, index) { return ''; },
+        name: function (name, ratio, id, index) { return name; },
         value: function (value, ratio, id) {
-          var format = d3.format('$');
-          return format(value);
+          return (value + '%');
         }
       }
     }
