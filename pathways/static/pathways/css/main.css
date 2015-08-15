@@ -374,20 +374,20 @@ a:focus.logo  {
 /*========BARGRAPHS=========*/
 .parallel-charts {
 	width: 700px;
-	height: 160px;
+	height: 150px;
 	margin: auto;
 }
 
 .barchartcareer1{
 	width: 50%;
-	height: 150px;
+	height: 170px;
 	float: left;
 	margin: auto;
 }
 
 .barchartcareer2{
 	width: 50%;
-	height: 150px;
+	height: 170px;
 	float: right;
 	margin: auto
 }
