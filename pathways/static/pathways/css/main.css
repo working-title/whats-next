@@ -139,7 +139,7 @@ a:focus.logo  {
 	border-color: #39a3db;
 	color: #fff;
 	position: absolute;
-	bottom: -15em;
+	bottom: -10em;
 	left: 0%;
 }
 
@@ -150,9 +150,6 @@ a:focus.logo  {
 	background-color: #39a3db;
 	outline: 0;
 	color: #fff;
-	position: absolute;
-	bottom: -15em;
-	left: 0%;
 }
 
 .btn-blue:hover {
@@ -488,9 +485,11 @@ li.taggle {
 /* line 265, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle {
   margin-right: 8px;
-  background: #E2E1DF;
+  background: #f64747;
+  color: #fff;
   padding: 5px 10px;
   border-radius: 3px;
+  font-size: 18px;
   position: relative;
   cursor: pointer;
   -webkit-transition: all 0.3s;
@@ -515,14 +514,13 @@ li.taggle {
 /* line 287, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle .close {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 3px;
   text-decoration: none;
   padding-left: 2px;
   padding-top: 3px;
   line-height: 75%;
-  color: #ccc;
-  color: rgba(0, 0, 0, 0.2);
+  color: #fff;
   padding-bottom: 4px;
   display: none;
 }
@@ -531,7 +529,7 @@ li.taggle {
 .taggle_list .taggle:hover {
   padding: 5px;
   padding-right: 15px;
-  background: #ccc;
+  background: #ca3030;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -541,11 +539,12 @@ li.taggle {
 /* line 309, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle:hover > .close {
   display: block;
+  color: #fff;
 }
 
 /* line 313, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle .close:hover {
-  color: #990033;
+  color: #fff;
 }
 
 /* line 317, ../../../sass/projects/taggle/taggle.scss */

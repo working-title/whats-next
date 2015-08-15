@@ -297,7 +297,7 @@ p a:hover {
   padding-left: 2px;
   padding-top: 3px;
   line-height: 75%;
-  color: #ccc;
+  color: #fff;
   color: rgba(0, 0, 0, 0.2);
   padding-bottom: 4px;
   display: none;
@@ -307,7 +307,7 @@ p a:hover {
 .taggle_list .taggle:hover {
   padding: 5px;
   padding-right: 15px;
-  background: #ccc;
+  background: #fff;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -317,12 +317,12 @@ p a:hover {
 /* line 309, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle:hover > .close {
   display: block;
-  color: #333;
+  color: #fff;
 }
 
 /* line 313, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle .close:hover {
-  color: #333 !important;
+  color: #fff !important;
 }
 
 /* line 317, ../../../sass/projects/taggle/taggle.scss */
