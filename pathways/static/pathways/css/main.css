@@ -455,6 +455,7 @@ li.taggle {
 
 .ui-autocomplete {
 	width: 100% !important;
+	max-height: 100px;
 }
 
  /* line 245, ../../../sass/projects/taggle/taggle.scss */
