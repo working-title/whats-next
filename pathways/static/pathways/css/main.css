@@ -248,6 +248,10 @@ a:focus.logo  {
 	position: relative;
 }
 
+.tags {
+	margin-top: 100px;
+}
+
 #screen-industry {
 	background-color: #2ecc71;
 	padding: 2em;
