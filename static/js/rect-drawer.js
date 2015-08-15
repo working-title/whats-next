@@ -31,11 +31,11 @@ function drawQualificationBarChart(canvas, val1, val2, val3, val4){
   var data = [
     ['No qualification', val1],
     ['School',  val2],
-    ['Bachelors degree',    val3],
-    ['Degree above bachelors',    val4]
+    ['Bachelors',    val3],
+    ['> Bachelors',    val4]
   ]
   var groups = [
-    ['No qualification', 'School', 'Bachelors degree', 'Degree above bachelors']
+    ['No qualification', 'School', 'Bachelors', '> Bachelors']
   ];
   var debtBar = generateStackedBarGraph(canvas, data, groups, blueHexArray);
 }
@@ -118,6 +118,9 @@ function generateStackedBarGraph(canvas, data, groups, colors){
         }
       },
       grouped: false
+    },
+    padding: {
+      left: 80
     }
   });
 }
