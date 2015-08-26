@@ -94,9 +94,24 @@
 	</nav> <!-- /.nav -->
 
 	<div class="row text-center">
+
 		<p class="category">annual salary</p>
+		<div class="parallel-charts">
+			<div class="barchartcareer1" id="career1-salary" ></div>
+			<div class="barchartcareer2" id="career2-salary" ></div>
+		</div>
+
 		<p class="category">hours per week</p>
+		<div class="parallel-charts">
+			<div class="barchartcareer1" id="career1-hours" ></div>
+			<div class="barchartcareer2" id="career2-hours" ></div>
+		</div>
+
 		<p class="category">employment rate</p>
+		<div class="parallel-charts">
+			<div class="barchartcareer1" id="career1-empl-rate" ></div>
+			<div class="barchartcareer2" id="career2-empl-rate" ></div>
+		</div>
 	</div> <!-- /.row -->
 
 </div> <!-- /.work-life -->
@@ -119,8 +134,18 @@
 	</nav> <!-- /.nav -->
 
 	<div class="row text-center">
+
 		<p class="category">minimum qualification</p>
+		<div class="parallel-charts">
+			<div class="barchartcareer1" id="career1-quals" ></div>
+			<div class="barchartcareer2" id="career2-quals" ></div>
+		</div>
+
 		<p class="category">student debt</p>
+		<div class="parallel-charts">
+			<div class="barchartcareer1" id="career1-debt" ></div>
+			<div class="barchartcareer2" id="career2-debt" ></div>
+		</div>
 	</div> <!-- /.row -->
 
 	<div class="row action">
@@ -143,5 +168,18 @@
 		</div>
 	</div>
 </footer>
+
+<script type="text/javascript">
+	drawSalaryBar('#career1-salary', 70000);
+	drawSalaryBar('#career2-salary', 50000);
+	drawDebtBar('#career1-debt', 24000);
+	drawDebtBar('#career2-debt', 16000);
+	drawEmploymentRateBar('#career1-empl-rate', 50);
+	drawEmploymentRateBar('#career2-empl-rate', 17);
+	drawHoursBarChart('#career1-hours', 20,40,40);
+	drawHoursBarChart('#career2-hours', 10,59,31);
+	drawQualificationBarChart('#career1-quals', 17,13,42,28);
+	drawQualificationBarChart('#career2-quals', 10,49,17,24);
+</script>
 
 {% endblock %}

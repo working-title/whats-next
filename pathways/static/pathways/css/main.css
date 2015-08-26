@@ -139,7 +139,7 @@ a:focus.logo  {
 	border-color: #39a3db;
 	color: #fff;
 	position: absolute;
-	bottom: -15em;
+	bottom: -10em;
 	left: 0%;
 }
 
@@ -150,9 +150,6 @@ a:focus.logo  {
 	background-color: #39a3db;
 	outline: 0;
 	color: #fff;
-	position: absolute;
-	bottom: -15em;
-	left: 0%;
 }
 
 .btn-blue:hover {
@@ -246,6 +243,10 @@ a:focus.logo  {
 	background-color: #f7ca18;
 	padding: 2em;
 	position: relative;
+}
+
+.tags {
+	margin-top: 100px;
 }
 
 #screen-industry {
@@ -371,6 +372,27 @@ a:focus.logo  {
 	color: #fff;
 }
 
+/*========BARGRAPHS=========*/
+.parallel-charts {
+	width: 700px;
+	height: 150px;
+	margin: auto;
+}
+
+.barchartcareer1{
+	width: 50%;
+	height: 170px;
+	float: left;
+	margin: auto;
+}
+
+.barchartcareer2{
+	width: 50%;
+	height: 170px;
+	float: right;
+	margin: auto
+}
+
 /*==========================*/
 #work-life {
 	background-color:#f5d000;
@@ -405,7 +427,7 @@ a:focus.logo  {
 	padding-bottom: 0.7em;
 	font-size: 22px;
 	position: absolute;
-	bottom: -400px;
+	bottom: -55px;
 	left: 0%;
 }
 
@@ -454,6 +476,7 @@ li.taggle {
 
 .ui-autocomplete {
 	width: 100% !important;
+	max-height: 100px;
 }
 
  /* line 245, ../../../sass/projects/taggle/taggle.scss */
@@ -484,9 +507,11 @@ li.taggle {
 /* line 265, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle {
   margin-right: 8px;
-  background: #E2E1DF;
+  background: #f64747;
+  color: #fff;
   padding: 5px 10px;
   border-radius: 3px;
+  font-size: 18px;
   position: relative;
   cursor: pointer;
   -webkit-transition: all 0.3s;
@@ -511,14 +536,13 @@ li.taggle {
 /* line 287, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle .close {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 3px;
   text-decoration: none;
   padding-left: 2px;
   padding-top: 3px;
   line-height: 75%;
-  color: #ccc;
-  color: rgba(0, 0, 0, 0.2);
+  color: #fff;
   padding-bottom: 4px;
   display: none;
 }
@@ -527,7 +551,7 @@ li.taggle {
 .taggle_list .taggle:hover {
   padding: 5px;
   padding-right: 15px;
-  background: #ccc;
+  background: #ca3030;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -537,11 +561,12 @@ li.taggle {
 /* line 309, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle:hover > .close {
   display: block;
+  color: #fff;
 }
 
 /* line 313, ../../../sass/projects/taggle/taggle.scss */
 .taggle_list .taggle .close:hover {
-  color: #990033;
+  color: #fff;
 }
 
 /* line 317, ../../../sass/projects/taggle/taggle.scss */
@@ -580,4 +605,3 @@ li.taggle {
   z-index: -1;
   visibility: hidden;
 }
-
