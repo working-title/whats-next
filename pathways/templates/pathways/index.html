@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block head %}
+    <script src="{% static 'pathways/js/mustache.min.js' %}"></script>
+{% endblock head %}
+
 {% block content %}
     <header>
         <script type="text/javascript">
+            // change mustache tags so that don't conflict with django
+            Mustache.tags = ['[[', ']]'];
+
             function getCookie(name) {
                 var cookieValue = null;
                 if (document.cookie && document.cookie != '') {
