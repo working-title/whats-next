@@ -121,4 +121,4 @@ REST_FRAMEWORK = {
 # Taggit
 TAGGIT_CASE_INSENSITIVE = True
 
-JS_REVERSE_EXCLUDE_NAMESPACES = ['admin', 'api', 'api_auth']
+JS_REVERSE_EXCLUDE_NAMESPACES = ['admin', 'api', 'api_auth', 'rest_framework']

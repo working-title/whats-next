@@ -21,7 +21,7 @@ from django_js_reverse.views import urls_js
 urlpatterns = [
     url(r'^', include('pathways.urls', namespace='pathways')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/', include('api.urls')),
+    url(r'^api/', include('api.urls', namespace='api')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^jsreverse/$', cache_page(3600)(urls_js), name='js_reverse'),
 ]
