@@ -10,7 +10,9 @@
 <header>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#fullpage').fullpage();
+			$('#fullpage').fullpage({
+				scrollOverflow: true,
+			});
 		});
 
 		// change mustache tags so that don't conflict with django
