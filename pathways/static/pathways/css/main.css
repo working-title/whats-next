@@ -67,7 +67,7 @@ a:focus.logo  {
 }
 
 .navbar {
-	margin-bottom: 0;
+	margin-bottom: 20px;
 }
 
 .navbar-default {
@@ -193,7 +193,6 @@ a:focus.logo  {
 #screen-one {
 	background-color: #39a3db;
 	color: #fff;
-	padding: 2em;
 }
 
 
@@ -251,7 +250,8 @@ a:focus.logo  {
 
 #screen-industry {
 	background-color: #2ecc71;
-	padding: 2em;
+	padding-top: 2em;
+	position: relative;
 }
 
 .industry-container {
@@ -467,6 +467,9 @@ a:focus.logo  {
  	background-color: #416db4;
  	padding: 22px 0;
  	color: #fff;
+ 	position: absolute;
+ 	bottom: 0;
+ 	width: 100%;
  }
 
  .footer-title {
