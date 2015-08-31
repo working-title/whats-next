@@ -1,185 +1,255 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block content%}
+{% block content %}
 
-<!-- ======================= NAV ======================= -->
-<nav class="navbar navbar-default" role="navigation">
-<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="navbar-header">
-		<div class="container">
-	      <a class="col-sm-offset-1 col-sm-4 logo" href="{% url 'pathways:index' %}">what's next <img class="img-responsive" src="{% static 'pathways/img/compass-outline.svg' %}" alt="Compass"></a>
-	    </div>
-	</div>
-</nav> <!-- /.nav -->
-
-
-<!-- ======================= INDUSTRY ======================= -->
-<div id="industry" class="fill-screen">
-	<div class="row text-center">
-		<div class="page-container clearfix hook">
-			<p>Now that you've chosen an industry</p>
-			<p class="lead">Pick 2 careers to compare!</p>
-		</div> <!-- /.container -->
-	</div> <!-- /.row -->
-
-	<div class="row">
-		<div class="page-container">
-			<div class="col-sm-offset-3 col-sm-6">
-				<button class="btn btn-block btn-field">
-	                {{ industry.name }}
-	            </button>
-			</div>
-		</div> <!-- /.page-container -->
-	</div> <!-- /.row -->
-
-	<div class="row">
-		<div class="page-container">
-
-            <div class="col-sm-12 text-center">
-                {% for career in industry.careers.all %}
-                    <button class="btn btn-career">
-                        {{ career.name }}
-	                </button>
-                {% endfor %}
-			</div>
-
-{#			<div class="col-sm-12 text-center">#}
-{#				<button class="btn btn-career">#}
-{#	                Publicist#}
-{#	            </button>#}
-{#	            <button class="btn btn-career">#}
-{#	                Editor#}
-{#	            </button>#}
-{#	            <button class="btn btn-career">#}
-{#	                Sound Tech#}
-{#	            </button>#}
-{#	            <button class="btn btn-career">#}
-{#	                TV Anchor#}
-{#	            </button>#}
-{#	            <button class="btn btn-career">#}
-{#	                Director#}
-{#	            </button>#}
-{#			</div>#}
-		</div> <!-- /.page-container -->
-	</div> <!-- /.row -->
-
-	<div class="row action">
-		<div class="page-container">
-			<div class="col-sm-offset-3 col-sm-6">
-				<button class="btn btn-block btn-compare"
-						data-scrollto="#work-life">
-	                Compare Now
-	            </button>
-			</div>
-		</div>
-	</div> <!-- /.row-action -->
-</div> <!-- /.industry -->
+    <!-- ======================= NAV ======================= -->
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <div class="container">
+                <a class="col-sm-offset-1 col-sm-4 logo" href="{% url 'pathways:index' %}">what's next <img
+                        class="img-responsive" src="{% static 'pathways/img/compass-outline.svg' %}" alt="Compass"></a>
+            </div>
+        </div>
+    </nav> <!-- /.nav -->
 
 
-<!-- ======================= WORK LIFE ======================= -->
-<div id="work-life" class="fill-screen">
-	<nav class="navbar navbar-default" role="navigation"> <!-- nav -->
-	<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<div class="container">
-				<div class="col-sm-6 career-heading text-center">
-		            radio dj
-				</div>
-				<div class="col-sm-6 career-heading text-center">
-	            	sound tech
-				</div>
-		    </div>
-		</div>
-	</nav> <!-- /.nav -->
+    <!-- ======================= INDUSTRY ======================= -->
+    <div id="industry" class="fill-screen">
+        <div class="row text-center">
+            <div class="page-container clearfix hook">
+                <p>Now that you've chosen an industry</p>
 
-	<div class="row text-center">
+                <p class="lead">Pick 2 careers to compare!</p>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.row -->
 
-		<p class="category">annual salary</p>
-		<div class="parallel-charts">
-			<div class="barchartcareer1" id="career1-salary" ></div>
-			<div class="barchartcareer2" id="career2-salary" ></div>
-		</div>
+        <div class="row">
+            <div class="page-container">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <button class="btn btn-block btn-field">
+                        {{ industry.name }}
+                    </button>
+                </div>
+            </div>
+            <!-- /.page-container -->
+        </div>
+        <!-- /.row -->
 
-		<p class="category">hours per week</p>
-		<div class="parallel-charts">
-			<div class="barchartcareer1" id="career1-hours" ></div>
-			<div class="barchartcareer2" id="career2-hours" ></div>
-		</div>
+        <div class="row">
+            <div class="page-container">
 
-		<p class="category">employment rate</p>
-		<div class="parallel-charts">
-			<div class="barchartcareer1" id="career1-empl-rate" ></div>
-			<div class="barchartcareer2" id="career2-empl-rate" ></div>
-		</div>
-	</div> <!-- /.row -->
+                <div class="col-sm-12 text-center">
+                    {% for career in industry.careers.all %}
+                        <div class="checkbox-btn">
+                            <input type="checkbox" id="{{ career.name }}-checkbox" value="{{ career.pk }}"/>
+                            <label for="{{ career.name }}-checkbox"><span>{{ career.name }}</span></label>
+                        </div>
+                    {% endfor %}
+                </div>
 
-</div> <!-- /.work-life -->
+                {#			<div class="col-sm-12 text-center">#}
+                {#				<button class="btn btn-career">#}
+                {#	                Publicist#}
+                {#	            </button>#}
+                {#	            <button class="btn btn-career">#}
+                {#	                Editor#}
+                {#	            </button>#}
+                {#	            <button class="btn btn-career">#}
+                {#	                Sound Tech#}
+                {#	            </button>#}
+                {#	            <button class="btn btn-career">#}
+                {#	                TV Anchor#}
+                {#	            </button>#}
+                {#	            <button class="btn btn-career">#}
+                {#	                Director#}
+                {#	            </button>#}
+                {#			</div>#}
+            </div>
+            <!-- /.page-container -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row action">
+            <div class="page-container">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <button id="compare" class="btn btn-block btn-compare"
+                            data-scrollto="#work-life">
+                        Compare Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- /.row-action -->
+    </div> <!-- /.industry -->
 
 
-<!-- ======================= GETTING THERE ======================= -->
-<div id="getting-there" class="fill-screen">
-	<nav class="navbar navbar-default" role="navigation"> <!-- nav -->
-	<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<div class="container">
-				<div class="col-sm-6 career-heading text-center">
-		            radio dj
-				</div>
-				<div class="col-sm-6 career-heading text-center">
-	            	sound tech
-				</div>
-		    </div>
-		</div>
-	</nav> <!-- /.nav -->
+    <!-- ======================= WORK LIFE ======================= -->
+    <div id="work-life" class="fill-screen">
+        <nav class="navbar navbar-default" role="navigation"> <!-- nav -->
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="container">
+                    <div id="career-heading-1" class="col-sm-6 career-heading text-center">
+                        radio dj
+                    </div>
+                    <div id="career-heading-2" class="col-sm-6 career-heading text-center">
+                        sound tech
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- /.nav -->
 
-	<div class="row text-center">
+        <div class="row text-center">
 
-		<p class="category">minimum qualification</p>
-		<div class="parallel-charts">
-			<div class="barchartcareer1" id="career1-quals" ></div>
-			<div class="barchartcareer2" id="career2-quals" ></div>
-		</div>
+            <p class="category">annual salary</p>
 
-		<p class="category">student debt</p>
-		<div class="parallel-charts">
-			<div class="barchartcareer1" id="career1-debt" ></div>
-			<div class="barchartcareer2" id="career2-debt" ></div>
-		</div>
-	</div> <!-- /.row -->
+            <div class="parallel-charts">
+                <div class="barchartcareer1" id="career1-salary"></div>
+                <div class="barchartcareer2" id="career2-salary"></div>
+            </div>
 
-	<div class="row action">
-		<div class="page-container clearfix">
-			<div class="col-sm-offset-3 col-sm-6">
-				<a href="{% url 'pathways:index'  %}#screen-industry">
-					<button class="btn btn-block btn-back">
-		                Back to Industries
-		            </button>
-		        </a>
-			</div>
-		</div>
-	</div> <!-- /.row action -->
-</div> <!-- /.getting-there -->
+            <p class="category">hours per week</p>
 
-<footer>
-	<div class="row text-center">
-		<div class="container">
-			<p>Brought to you by team <strong class="footer-title">Working Title</strong> as part of <strong class="footer-title">GovHack 2015 Wellington</strong>, New Zealand.</p>
-		</div>
-	</div>
-</footer>
+            <div class="parallel-charts">
+                <div class="barchartcareer1" id="career1-hours"></div>
+                <div class="barchartcareer2" id="career2-hours"></div>
+            </div>
 
-<script type="text/javascript">
-	drawSalaryBar('#career1-salary', 70000);
-	drawSalaryBar('#career2-salary', 50000);
-	drawDebtBar('#career1-debt', 24000);
-	drawDebtBar('#career2-debt', 16000);
-	drawEmploymentRateBar('#career1-empl-rate', 50);
-	drawEmploymentRateBar('#career2-empl-rate', 17);
-	drawHoursBarChart('#career1-hours', 20,40,40);
-	drawHoursBarChart('#career2-hours', 10,59,31);
-	drawQualificationBarChart('#career1-quals', 17,13,42,28);
-	drawQualificationBarChart('#career2-quals', 10,49,17,24);
-</script>
+            <p class="category">employment rate</p>
+
+            <div class="parallel-charts">
+                <div class="barchartcareer1" id="career1-empl-rate"></div>
+                <div class="barchartcareer2" id="career2-empl-rate"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div> <!-- /.work-life -->
+
+
+    <!-- ======================= GETTING THERE ======================= -->
+    <div id="getting-there" class="fill-screen">
+        <nav class="navbar navbar-default" role="navigation"> <!-- nav -->
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="container">
+                    <div class="col-sm-6 career-heading text-center">
+                        radio dj
+                    </div>
+                    <div class="col-sm-6 career-heading text-center">
+                        sound tech
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- /.nav -->
+
+        <div class="row text-center">
+
+            <p class="category">minimum qualification</p>
+
+            <div class="parallel-charts">
+                <div class="barchartcareer1" id="career1-quals"></div>
+                <div class="barchartcareer2" id="career2-quals"></div>
+            </div>
+
+            <p class="category">student debt</p>
+
+            <div class="parallel-charts">
+                <div class="barchartcareer1" id="career1-debt"></div>
+                <div class="barchartcareer2" id="career2-debt"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row action">
+            <div class="page-container clearfix">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <a href="{% url 'pathways:index' %}#screen-industry">
+                        <button class="btn btn-block btn-back">
+                            Back to Industries
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.row action -->
+    </div> <!-- /.getting-there -->
+
+    <footer>
+        <div class="row text-center">
+            <div class="container">
+                <p>Brought to you by team <strong class="footer-title">Working Title</strong> as part of <strong
+                        class="footer-title">GovHack 2015 Wellington</strong>, New Zealand.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        drawSalaryBar('#career1-salary', 70000);
+        drawSalaryBar('#career2-salary', 50000);
+        drawDebtBar('#career1-debt', 24000);
+        drawDebtBar('#career2-debt', 16000);
+        drawEmploymentRateBar('#career1-empl-rate', 50);
+        drawEmploymentRateBar('#career2-empl-rate', 17);
+        drawHoursBarChart('#career1-hours', 20, 40, 40);
+        drawHoursBarChart('#career2-hours', 10, 59, 31);
+        drawQualificationBarChart('#career1-quals', 17, 13, 42, 28);
+        drawQualificationBarChart('#career2-quals', 10, 49, 17, 24);
+    </script>
+
+    <script type="text/javascript">
+        var checkedCareersSelector = "'.checkbox-btn input[type=checkbox]:checked";
+
+        $('.checkbox-btn input[type=checkbox]').on('change', function (e) {
+            if ($('.checkbox-btn input[type=checkbox]:checked').length > 2) {
+                $(this).prop('checked', false);
+            }
+        });
+
+        $('.btn-compare').click(function () {
+            var checkedCareers = $('.checkbox-btn input[type=checkbox]:checked');
+
+            // can only compare 2 careers
+            if (checkedCareers.length != 2) {
+                return;
+            }
+
+            var position = 1;
+
+            checkedCareers.each(function () {
+                var careerPk = (this.checked ? $(this).val() : "");
+
+
+                $.ajax({
+                    url: '/api/career/' + careerPk,
+                    type: 'GET',
+                    contentType: 'application/json'
+                }).done(function (career) {
+                    drawCareer(position, career)
+
+                    // make the position 2, as there are only 2 careers to compare
+                    position = 2;
+                });
+            });
+
+        });
+
+        function drawCareer(position, career) {
+            $('#career-heading-' + position).html(career.name);
+
+            drawSalaryBar('#career' + position + '-salary', career.income);
+            drawEmploymentRateBar('#career' + position + '-empl-rate', 50);
+            drawHoursBarChart('#career' + position + '-hours', career.hours_worked_30_less, career.hours_worked_60_less, career.hours_worked_60_more);
+            drawQualificationBarChart('#career' + position + '-quals', career.no_qualification, career.school, career.post_school, career.degree);
+        }
+
+
+    </script>
 
 {% endblock %}
