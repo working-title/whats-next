@@ -3,6 +3,7 @@
 
 {% block head %}
     <script src="{% static 'pathways/js/mustache.min.js' %}"></script>
+    <script src="{% url 'js_reverse' %}" type="text/javascript"></script>
 {% endblock head %}
 
 {% block content %}
@@ -137,7 +138,8 @@
                     if (response.hasOwnProperty(key)) {
                         var industry = response[key];
                         var rendered = Mustache.render(template, {name: industry['name'],
-                                                                    description: industry['description']});
+                                                                    description: industry['description'],
+                                                                    url: Urls['pathways:subjects'](industry['pk'])});
                         target.append(rendered);
                     }
                 }
@@ -248,7 +250,7 @@
                             <div class="text-center industry-title">[[ name ]]</div>
                             <div class="industry-content">[[ description ]]</div>
                             <div class="button-container">
-                                <a href="{% url 'pathways:subjects' 000 %}#industry">
+                                <a href="[[ url ]]#industry">
                                     <button class="btn btn-block btn-explore">
                                         Explore Careers
                                     </button>

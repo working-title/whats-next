@@ -47,7 +47,8 @@ class IndustrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Industry
-        fields = ('name',
+        fields = ('pk',
+                  'name',
                   'description',
                   'careers',
                   'tags',)
