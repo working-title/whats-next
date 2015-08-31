@@ -6,6 +6,7 @@ router = routers.DefaultRouter()
 
 router.register(r'qualification', views.QualificationViewSet)
 router.register(r'career', views.CareerViewSet)
+router.register(r'industry', views.IndustryViewSet)
 router.register(r'interests', views.InterestViewSet)
 
 urlpatterns = [

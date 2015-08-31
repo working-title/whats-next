@@ -1,238 +1,284 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block content%}
-<header>
-	<script type="text/javascript">
-		var tags = [
-			{
-				value: "computers",
-				label: "computers",
-			},
-			{
-				value: "tech",
-				label: "tech",
-			},
-			{
-				value: "electronics",
-				label: "electronics",
-			},
-			{
-				value: "media",
-				label: "media",
-			},
-			{
-				value: "digital",
-				label: "digital",
-			},
-			{
-				value: "music",
-				label: "music",
-			},
-			{
-				value: "performance",
-				label: "performance",
-			},
-			{
-				value: "news",
-				label: "news",
-			},
-		];
+{% block head %}
+    <script src="{% static 'pathways/js/mustache.min.js' %}"></script>
+    <script src="{% url 'js_reverse' %}" type="text/javascript"></script>
+{% endblock head %}
 
-		var greyedOutGoPath = "{% static 'pathways/img/grey-go.png' %}"
-		var goPath = "{% static 'pathways/img/go.png' %}"
+{% block content %}
+    <header>
+        <script type="text/javascript">
+            // change mustache tags so that don't conflict with django
+            Mustache.tags = ['[[', ']]'];
 
-		$(document).ready(function() {
-			// Setup the taggle box for containing the tags
-			var taggle = new Taggle("taggle", {
-				onTagAdd: function(event, tag) {
-					var tags = taggle.getTags().values;
-					$(".btn-blue").css("bottom", "-7.95em");
-					
-					if (tags.length > 3) {
-						taggle.remove(tag);	
-					}
-				},
-				placeholder: "",
-				duplicateTagClass: 'bounce',
-				allowedTags: ["computers", "tech", "electronics", "media", "digital", "music", "performance", "news"],
-			});
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie != '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
 
-			// Setup the taggle box for getting input from the user
-			var taggleInput = new Taggle("taggle-input", {
-				onTagAdd: function(event, tag) {
-					var tags = taggle.getTags().values;
-
-					taggleInput.remove(tag);
-					taggle.add(tag);
-				},
-				placeholder: "eg: writing, photography, film",
-			});
-
-			// Remove the text input from the taggle box that dosnt
-			// need it
-			console.log($("#taggle .taggle_input").remove());
-
-			// Setup the auto complete for the taggle input box
-			var container = taggleInput.getContainer();
-			var input = taggleInput.getInput();
-
-			$(input).autocomplete({
-				source: tags,
-				appendTo: container,
-				position: { at: "left bottom", of: container },
-				select: function(event, data) {
-					event.preventDefault();
-					//Add the tag if user clicks
-					if (event.which === 1) {
-						example4.add(data.item.value);
-					}
-				}
-			});
-		});
-	</script>
-</header>
-
-<!-- ======================= NAV ======================= -->
-<nav class="navbar navbar-default" role="navigation">
-	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="navbar-header">
-		<div class="container">
-			<a class="col-sm-offset-1 col-sm-4 logo" href="{% url 'pathways:index' %}">what's next <img class="img-responsive" src="{% static 'pathways/img/compass-outline.svg' %}" alt="Compass"></a>
-		</div>
-	</div>
-</nav> <!-- /.nav -->
-
-<div id="screen-one" class="fill-screen"> <!-- ======================= ABOVE FOLD ======================= -->
-	<div class="row text-center">
-		<div class="container clearfix">
-			<p>Not sure what to do after high school? Can’t pick a career?</p>
-			<p class="lead">Use <strong>what’s next</strong> to explore your options!</p>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="page-container">
-			<div class="col-sm-4 col-lg-4 top-tip">
-				<p>Choose your interests and get career field suggestions based on the tags you generate!</p>
-			</div>
-
-			<div class="col-sm-4 col-lg-4 text-center">
-				<img class="img-responsive compass" src="{% static 'pathways/img/compass.svg' %}" alt="Compass">
-			</div>
-
-			<div class="col-sm-4 col-lg-4 text-right bottom-tip">
-				<p>Compare careers side by side for salary, hiring rates, student debt and more!</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="row action">
-		<div class="page-container clearfix">
-			<div class="col-sm-offset-3 col-sm-6">
-				<button class="btn btn-block btn-start"
-						data-scrollto="#screen-tags">
-					Start Looking
-				</button>
-			</div>
-		</div>
-	</div> <!-- /.row action -->
-</div> <!-- /#screen-one -->
+            // load tags from backend into javascript object for taggle to use
+            var tags = [
+                {% for tag in tags %}
+                    {
+                        value: "{{ tag.name }}",
+                        label: "{{ tag.name }}"
+                    },
+                {% endfor %}
+            ];
 
 
-<div id="screen-tags" class="fill-screen"> <!-- ======================= TAGS ======================= -->
-	<div class="row text-center">
-		<div class="page-container clearfix">
-			<p>Tell us a bit more about your interests (max of 3).</p>
-			<p class="lead">Start typing below!</p>
-		</div>
-	</div>
+            var greyedOutGoPath = "{% static 'pathways/img/grey-go.png' %}";
+            var goPath = "{% static 'pathways/img/go.png' %}";
 
-	<div class="row">
-		<div class="page-container">
-			<div class="col-sm-offset-3 col-sm-6">
-				<div id="taggle-input" class="input textarea" name="taggle"
-					 placeholder="eg: writing, photography, film"></div>
+            $(document).ready(function () {
 
-				<div id="taggle" class="input tags"></div>
-			</div>
-		</div>
-	</div>
+                // setup the taggle box for containing the tags
+                var taggle = new Taggle("taggle", {
+                    onTagAdd: function (event, tag) {
+                        var tags = taggle.getTags().values;
+                        $(".btn-blue").css("bottom", "-7.95em");
 
-	<div class="row action">
-		<div class="page-container">
-			<div class="col-sm-offset-3 col-sm-6">
-				<button class="btn btn-block btn-blue"
-						data-scrollto="#screen-industry">
-					Next Step
-				</button>
-			</div>
-		</div>
-	</div>
-</div> <!-- /#screen-tags -->
+                        if (tags.length > 3) {
+                            taggle.remove(tag);
+                        }
+                    },
+                    placeholder: "",
+                    duplicateTagClass: 'bounce',
+                    allowedTags: [{% for tag in tags %}"{{ tag.name }}",{% endfor %}]
+                });
 
-<div id="screen-industry" class="fill-screen"> <!-- ======================= INDUSTRY ======================= -->
-	<div class="row">
-		<div class="container">
-			<p class="text-center">Here are some industries we think you might like.<p>
-			<p class="lead text-center">Pick one to explore!</p>
+                // setup another taggle instance for getting input from the user
+                var taggleInput = new Taggle("taggle-input", {
+                    onTagAdd: function (event, tag) {
+                        // pass on the input to the other taggle instance
+                        taggleInput.remove(tag);
+                        taggle.add(tag);
+                    },
+                    placeholder: "eg: writing, photography, film",
+                    allowedTags: [{% for tag in tags %}"{{ tag.name }}",{% endfor %}]
+                });
 
-			<div class="col-xs-12">
+                // setup auto completion for the taggle input
+                var container = taggleInput.getContainer();
+                var input = taggleInput.getInput();
 
-				<div class="col-sm-4 industry-container">
-					<div class="industry-suggestion">
-						<div class="text-center industry-title">Performance</div>
-						<div class="industry-content">The Performance Industry includes Actors, Musicians, Dancers and more. If you enjoy being on or behind a stage, this might be an industry for you!</div>
-						<div class="button-container">
-							<a href="{% url 'pathways:subjects' %}#industry">
-								<button class="btn btn-block btn-explore">
-									Explore Careers
-								</button>
-							</a>
-						</div> <!-- /.button-container -->
-					</div> <!-- /.industry-container -->
-				</div> <!-- /.industry-suggestion -->
+                $(input).autocomplete({
+                    source: tags,
+                    appendTo: container,
+                    position: {at: "left bottom", of: container},
+                    select: function (event, data) {
+                        event.preventDefault();
+                        //Add the tag if user clicks
+                        if (event.which === 1) {
+                            taggle.add(data.item.value);
+                        }
+                    }
+                });
 
-				<div class="col-sm-4 industry-container">
-					<div class="industry-suggestion">
-						<div class="text-center industry-title">Broadcasting</div>
-						<div class="industry-content">Broadcasting in an Industry full of Producers, Directors, Technicians, DJs. If you ever thought about being on tv or radio, check out these careers!</div>
-						<div class="button-container">
-							<a href="{% url 'pathways:subjects' %}#industry">
-								<button class="btn btn-block btn-explore">
-									Explore Careers
-								</button>
-							</a>
-						</div> <!-- /.button-container -->
-					</div> <!-- /.industry-container -->
-				</div> <!-- /.industry-suggestion -->
+                // send csrf token along with all ajax queries
+                var csrftoken = getCookie('csrftoken');
+                $.ajaxSetup({
+                    beforeSend: function (xhr, settings) {
+                        if (!this.crossDomain) {
+                            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                        }
+                    }
+                });
 
-				<div class="col-sm-4 industry-container">
-					<div class="industry-suggestion">
-						<div class="text-center industry-title">Advertising</div>
-						<div class="industry-content">Advertising is a diverse industry that includes creatives and business people alike! If you’re always thinking of the next big thing, this might be for you!</div>
-						<div class="button-container">
-							<a href="{% url 'pathways:subjects' %}#industry">
-								<button class="btn btn-block btn-explore">
-									Explore Careers
-								</button>
-							</a>
-						</div> <!-- /.button-container -->
-					</div> <!-- /.industry-container -->
-				</div> <!-- /.industry-suggestion -->
+                $("#next-step").click(function () {
+                    var postData = {
+                        "tags": taggle.getTagValues()
+                    };
 
-			</div> <!-- /.col-sm-12 -->
+                    $.ajax({
+                        url: '/api/industry/from_tags/',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(postData)
+                    }).done(function (data) {
 
-		</div> <!-- /.container -->
-	</div> <!-- /.row -->
-</div> <!-- /#industry -->
+                        console.log(data);
 
-<footer>
-	<div class="row text-center">
-		<div class="container">
-			<p>Brought to you by team <strong class="footer-title">Working Title</strong> as part of <strong strong class="footer-title">GovHack 2015 Wellington</strong>, New Zealand.</p>
-		</div>
-	</div>
-</footer>
+                        // log errors returned from api
+                        if (data.hasOwnProperty('error')) {
+                            console.log(data['error']);
+                            return;
+                        }
 
-{% endblock %}
+                        insertIndustriesFromResponse(data);
+                    }).fail(function (res) {
+                        console.error(res.responseText);
+                    });
+
+                });
+
+            });
+
+            function insertIndustriesFromResponse(response) {
+                var target = $('#target');
+                target.empty(); // remove any old industry suggestions
+
+                var template = $('#industry-template').html();
+                Mustache.parse(template); // speeds up future uses
+
+                // for every industry response, append it to the target div
+                for (var key in response) {
+                    if (response.hasOwnProperty(key)) {
+                        var industry = response[key];
+                        var rendered = Mustache.render(template, {name: industry['name'],
+                                                                    description: industry['description'],
+                                                                    url: Urls['pathways:subjects'](industry['pk'])});
+                        target.append(rendered);
+                    }
+                }
+
+            }
+        </script>
+    </header>
+
+    <!-- ======================= NAV ======================= -->
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <div class="container">
+                <a class="col-sm-offset-1 col-sm-4 logo" href="{% url 'pathways:index' %}">what's next <img
+                        class="img-responsive" src="{% static 'pathways/img/compass-outline.svg' %}" alt="Compass"></a>
+            </div>
+        </div>
+    </nav> <!-- /.nav -->
+
+    <div id="screen-one" class="fill-screen"> <!-- ======================= ABOVE FOLD ======================= -->
+        <div class="row text-center">
+            <div class="container clearfix">
+                <p>Not sure what to do after high school? Can’t pick a career?</p>
+
+                <p class="lead">Use <strong>what’s next</strong> to explore your options!</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="page-container">
+                <div class="col-sm-4 col-lg-4 top-tip">
+                    <p>Choose your interests and get career field suggestions based on the tags you generate!</p>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 text-center">
+                    <img class="img-responsive compass" src="{% static 'pathways/img/compass.svg' %}" alt="Compass">
+                </div>
+
+                <div class="col-sm-4 col-lg-4 text-right bottom-tip">
+                    <p>Compare careers side by side for salary, hiring rates, student debt and more!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row action">
+            <div class="page-container clearfix">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <button class="btn btn-block btn-start"
+                            data-scrollto="#screen-tags">
+                        Start Looking
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- /.row action -->
+    </div> <!-- /#screen-one -->
+
+
+    <div id="screen-tags" class="fill-screen"> <!-- ======================= TAGS ======================= -->
+        <div class="row text-center">
+            <div class="page-container clearfix">
+                <p>Tell us a bit more about your interests (max of 3).</p>
+
+                <p class="lead">Start typing below!</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="page-container">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <div id="taggle-input" class="input textarea" name="taggle"
+                         placeholder="eg: writing, photography, film"></div>
+
+                    <div id="taggle" class="input tags"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row action">
+            <div class="page-container">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <button id="next-step" class="btn btn-block btn-blue"
+                            data-scrollto="#screen-industry">
+                        Next Step
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /#screen-tags -->
+
+    <div id="screen-industry" class="fill-screen"> <!-- ======================= INDUSTRY ======================= -->
+        <div class="row">
+            <div class="container">
+                <p class="text-center">Here are some industries we think you might like.
+
+                <p>
+
+                <p class="lead text-center">Pick one to explore!</p>
+
+                <div class="col-xs-12">
+
+                    <div id="target"></div>
+
+                    <!-- Mustache Template !-->
+                    <script id="industry-template" type="x-tmpl-mustache">
+                       <div class="col-sm-4 industry-container">
+                        <div class="industry-suggestion">
+                            <div class="text-center industry-title">[[ name ]]</div>
+                            <div class="industry-content">[[ description ]]</div>
+                            <div class="button-container">
+                                <a href="[[ url ]]#industry">
+                                    <button class="btn btn-block btn-explore">
+                                        Explore Careers
+                                    </button>
+                                </a>
+                            </div>
+                            <!-- /.button-container -->
+                        </div>
+                        <!-- /.industry-container -->
+                    </div>
+                    <!-- /.industry-suggestion -->
+                    </script>
+                </div>
+                <!-- /.col-sm-12 -->
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.row -->
+    </div> <!-- /#industry -->
+
+    <footer>
+        <div class="row text-center">
+            <div class="container">
+                <p>Brought to you by team <strong class="footer-title">Working Title</strong> as part of <strong strong
+                                                                                                                 class="footer-title">GovHack
+                    2015 Wellington</strong>, New Zealand.</p>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}d

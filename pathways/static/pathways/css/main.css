@@ -348,28 +348,47 @@ a:focus.logo  {
 	padding-top: 2em;
 }
 
-.btn-career {
-	color: #fff;
+.checkbox-btn input[type="checkbox"] {
+    display:none;
+}
+
+.checkbox-btn input[type="checkbox"] + label span {
+    color: #fff;
 	background-color: #26a65b;
-	padding-top: 0.7em;
-	padding-bottom: 0.7em;
+	padding: 0.7em;
 	font-size: 18px;
 	min-width: 130px;
 	margin: 0.5em;
 }
 
-.btn-career:focus {
-	color: #fff;
-	outline: 0;
-	background-color: #26a65b;
-	padding-top: 0.7em;
-	padding-bottom: 0.7em;
+.checkbox-btn {
+	display: inline-block;
 }
 
-.btn-career:hover {
-	background-color: #1e824c;
-	border-color: #1e824c;
-	color: #fff;
+.checkbox-btn input[type="checkbox"] + label span {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.checkbox-btn input[type="checkbox"]:checked + label span {
+    background-color: #1e824c;
 }
 
 /*========BARGRAPHS=========*/

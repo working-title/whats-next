@@ -6,3 +6,6 @@ envdir == 0.7
 mysql-python == 1.2.5
 django-debug-toolbar == 0.9.1
 django-taggit==0.16.3
+django-js-reverse==0.6.1
+
+

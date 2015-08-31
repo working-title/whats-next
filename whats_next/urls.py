@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.decorators.cache import cache_page
+from django_js_reverse.views import urls_js
 
 urlpatterns = [
     url(r'^', include('pathways.urls', namespace='pathways')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/', include('api.urls')),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api/', include('api.urls', namespace='api')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^jsreverse/$', cache_page(3600)(urls_js), name='js_reverse'),
 ]
