@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'rest_framework',
     'taggit',
+    'django_js_reverse',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -119,3 +120,5 @@ REST_FRAMEWORK = {
 
 # Taggit
 TAGGIT_CASE_INSENSITIVE = True
+
+JS_REVERSE_EXCLUDE_NAMESPACES = ['admin', 'api', 'api_auth']
