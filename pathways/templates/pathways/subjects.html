@@ -93,10 +93,10 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <div class="container">
-                    <div id="career-heading-1" class="col-sm-6 career-heading text-center">
+                    <div class="col-sm-6 career-heading career-heading-1 text-center">
                         radio dj
                     </div>
-                    <div id="career-heading-2" class="col-sm-6 career-heading text-center">
+                    <div class="col-sm-6 career-heading career-heading-2 text-center">
                         sound tech
                     </div>
                 </div>
@@ -138,10 +138,10 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <div class="container">
-                    <div class="col-sm-6 career-heading text-center">
+                    <div class="col-sm-6 career-heading career-heading-1 text-center">
                         radio dj
                     </div>
-                    <div class="col-sm-6 career-heading text-center">
+                    <div class="col-sm-6 career-heading career-heading-2 text-center">
                         sound tech
                     </div>
                 </div>
@@ -241,7 +241,7 @@
         });
 
         function drawCareer(position, career) {
-            $('#career-heading-' + position).html(career.name);
+            $('.career-heading-' + position).html(career.name);
 
             drawSalaryBar('#career' + position + '-salary', career.income);
             drawEmploymentRateBar('#career' + position + '-empl-rate', 50);
